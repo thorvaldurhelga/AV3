@@ -1,0 +1,30 @@
+1. Extract the 3 large planes of the filing cabinet
+
+Canny edge detection
+RANSAC
+
+Output: set of edges of polygons
+
+2. Use the 3 large planes to register the 21 views together
+
+Region growing - doall.m from '3 3D Object Recognition from Range Data'
+Pose estimation
+
+or
+
+Edge based - interpretation tree algorithm
+
+Output: Translation and rotation for each image
+
+3. Extract the 3D point set for the points belonging to the book
+
+Output: Set of points belonging to the book in each image (corresponding to corners?)
+
+4. Register the book points using the reference frame transformation estimated from the planes.
+
+Output: Merged book image obtained by averaging over all of the points
+
+5. Evaluation
+
+Output: 21 images showing corner points for the book from head on view
+
