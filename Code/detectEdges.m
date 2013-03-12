@@ -16,7 +16,7 @@ function edges = detectEdges(frame)
 	for r = 1:480
 		for c = 1:640	
 			% if the depth value for the pixel in the XYZ image is greater than a certain value, set the intensity value to zero for that pixel in the edge map
-			if frame.XYZ(r,c,3) > 1250		
+			if frame.XYZ(r,c,3) > 1600		
 				edges(r,c) = 0;
 			end % end of if statement
 		end % end of column for loop
