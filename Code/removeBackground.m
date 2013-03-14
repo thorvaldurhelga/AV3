@@ -24,7 +24,7 @@ function retval = removeBackground(frameArray)
 			for c = 1:640
 				
 				% if the depth value for the pixel in the XYZ image is greater than a certain value, set the intensity value to zero for that pixel in the image
-				if frameArray(i).XYZ(r,c,3) > 1250		
+				if frameArray(i).XYZ(r,c,3) > 1400		
 %					frameArray(i).image(r,c,:) = 0;
 					edgesForFrame(r,c) = 0;
 				end

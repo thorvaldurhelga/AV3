@@ -13,13 +13,10 @@ for i = 1:size(edges,2)
         
 	% RANSAC
 	flag = 1;
-	for j = 1:ransacIterations
+	for j = 1:
 		j
 		[flag,t,d,nr,nc,count,frl,fcl,newcountl] = ransacline(r{i},c{i},1,0.1,0.01,0.001,140,3);
-		i
-        plot(fcl,frl,'r.');
-        size(fcl);
-        size(frl);
+		plot(fcl,frl,'r.');
 		hold on;
 		if flag == 1 & newcountl > 0 
 			%[cr,cc] = plotline(t,d);
