@@ -1,8 +1,18 @@
 function [frl,fcl,cr,cc] = extractLines(edges, ransacIterations, showPlots)
-r = {};
-c = {};
-for i = 1:size(edges,2)
-	[r{i},c{i}] = find(edges{i}==1);
+%DETECTEDGES A pre-processing function that performs canny edge detection and removes irrelevant background information for the frame provided as input
+% INPUT: @edges - Binary image containing only edges in frame that is
+%        outputted by detectEdges.m
+%        @ransacIterations - Number of iterations run to fit lines to edges
+%        in RANSAC 
+%        @showPlots - Boolean indicating whether to plot the edges and
+%        lines or not
+% OUTPUT: @frl - Row information for the line-edge overlap
+%         @fcl - Column information for the line-edge overlap
+%         @cr - Row information for the fitted line
+%         @cc - Column information for the fitted lines
+    r = {};
+    c = {};
+	[r{i},c{i}] = find(edges==1);
     
     if(showPlots == true)
         figure(i);
