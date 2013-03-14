@@ -1,5 +1,10 @@
 load '../Data/data1.mat'
-for i = 1:size(frame,2)
-    edges = detectEdges(frame(i));
-    lineData = extracLines(frame(i).image,edges,10,false);
-end;
+edges = {};
+lineData = {};
+
+edges{1} = detectEdges(frame(1));
+edges{2} = detectEdges(frame(2));
+
+lineData{1} = extracLines(frame(1).image,edges,10,false);
+lineData{2} = extracLines(frame(2).image,edges,10,false);
+

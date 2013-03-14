@@ -1,11 +1,23 @@
-function [] = lineMatching(lineRows, lineCols)
+function [] = lineMatching(llineData, rlineData, model)
 %% perform stereo correspondance, triangulation and recognition against
 %% a pre-known model
 
 global line3d modelline line3a paircount verifycount
   
-  % load stage 1 data
-  res1;
+llinecount = llineData{1};
+llinea = llineData{2};
+llinem = llineData{3};
+llinel = llineData{4};
+llineg = llineData{5};
+llinet = llineData{6};
+llined = llineData{7};
+rlinecount = rlineData{1};
+rlinea = rlineData{2};
+rlinem = rlineData{3};
+rlinel = rlineData{4};
+rlineg = rlineData{5};
+rlinet = rlineData{6};
+rlined = rlineData{7};
 
   % find potential pairings
   linepairs = zeros(100,2);

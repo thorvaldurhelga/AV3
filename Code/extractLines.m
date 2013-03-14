@@ -36,7 +36,7 @@ function lineData = extractLines(image, edges, ransacIterations, showPlots)
 	% RANSAC
 	for j = 1:ransacIterations
 		j
-		[flag,t,d,nr,nc,count,pointRows{j},pointCols{j},pointCount] = ransacline(rows,cols,1,0.1,0.01,0.001,140,3);
+		[flag,t,d,nr,nc,count,pointRows{j},pointCols{j},pointCount] = ransacline(rows,cols,0.5,0.1,0.01,0.001,100,3);
         if pointCount > 0
             linecount = linecount+1;
             [linea(linecount,:),linem(linecount,:),linel(linecount), ...
