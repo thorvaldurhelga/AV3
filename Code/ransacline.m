@@ -12,7 +12,7 @@
 function [flag,t,d,nr,nc,count,frfr,frfc,newcount] = ransacline(r,c,tol,probd,probnd,probf,MINLEN,fign)
 
   % compute limit to matching tries
-  N = ceil(log(probf)/ log(1 - probd*probd));
+  N = ceil(log(probf)/ log(1 - probd*probnd));
 
   % do matching tries
   flag=0;
@@ -100,16 +100,16 @@ function [flag,t,d,nr,nc,count,frfr,frfc,newcount] = ransacline(r,c,tol,probd,pr
 
 % EDITED CODE
 %figure(fign+10)
-title('image lines found by RANSAC')
-hold on
-axis([0 640 0 480])
-axis ij
+%title('image lines found by RANSAC')
+%hold on
+%axis([0 640 0 480])
+%axis ij
 
-for k = 1 : count
-if fvalid(k)
-plot(fc(k),fr(k),'r.')
-end
-end
+%for k = 1 : count
+%if fvalid(k)
+%plot(fc(k),fr(k),'r.')
+%end
+%end
       % copy over used and unused points
       newcount = 0;
       rfr = zeros(lenr,1);
