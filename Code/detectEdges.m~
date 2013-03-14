@@ -32,6 +32,8 @@ function edges = detectEdges(frame)
 	combined_edges(backgroundIndices) = 0;
 
 	% return the edges for the frame
+	edge_indices = find(combined_edges>0);
+	combined_edges(edge_indices) = 1;
 	edges = combined_edges;
 
 end % end of function
