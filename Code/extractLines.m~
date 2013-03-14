@@ -1,4 +1,4 @@
-function [frl,fcl,cr,cc] = extractLines(edges, ransacIterations, showPlots)
+function [pointRows,pointCols,lineRows,lineCols] = extractLines(image, edges, ransacIterations, showPlots)
 %DETECTEDGES A pre-processing function that performs canny edge detection and removes irrelevant background information for the frame provided as input
 % INPUT: @edges - Binary image containing only edges in frame that is
 %        outputted by detectEdges.m
@@ -6,37 +6,49 @@ function [frl,fcl,cr,cc] = extractLines(edges, ransacIterations, showPlots)
 %        in RANSAC 
 %        @showPlots - Boolean indicating whether to plot the edges and
 %        lines or not
-% OUTPUT: @frl - Row information for the line-edge overlap
-%         @fcl - Column information for the line-edge overlap
-%         @cr - Row information for the fitted line
-%         @cc - Column information for the fitted lines
-    r = {};
-    c = {};
-	[r{i},c{i}] = find(edges==1);
-    
+% OUTPUT: @pointRows - Row information for the line-edge overlap points
+%         @pointCols - Column information for the line-edge overlap points
+%         @lineRows - Row information for the fitted line
+%         @lineCols - Column information for the fitted lines
+
+	[rows,cols] = find(edges==1);   
     if(showPlots == true)
-        figure(i);
-        plot(c{i},r{i},'k.');
+        figure(1);
+        plot(cols,rows,'k.');
         axis([0 640 0 480]);
         axis ij;
         hold on;
     end;
-        
+    
+    pointRows = {};
+    pointCols = {};
+    lineRows = {};
+    lineCols = {};
+    
+    linecount = 0;
+    linea = zeros(ransacIterations,2);
+    linem = zeros(ransacIterations,2);
+    linel = zeros(ransacIterations,1);
+    lineg = zeros(ransacIterations,1);
+    linet = zeros(ransacIterations,1);
+    lined = zeros(ransacIterations,1);
+    
 	% RANSAC
-	flag = 1;
 	for j = 1:ransacIterations
 		j
-		[flag,t,d,nr,nc,count,frl,fcl,newcountl] = ransacline(r{i},c{i},1,0.1,0.01,0.001,140,3);
-        plot(fcl,frl,'r.');
-		hold on;
-		if flag == 1 & newcountl > 0 
-			[cr,cc] = plotline(t,d);
-			plot(cc,cr);
-            size(cc);
-            size(cr);
+		[flag,t,d,nr,nc,count,pointRows{j},pointCols{j},pointCount] = ransacline(rows,cols,1,0.1,0.01,0.001,140,3);
+        if pointCount > 0
+            linecount = linecount+1;
+            [linea(llinecount,:),linem(llinecount,:),linel(llinecount), ...
+                lineg(llinecount)] = descrseg(pointRows{j},pointCols{j},image,4);
+            linet(llinecount) = t;
+            lined(llinecount) = d;
+            
+            plot(pointCols{j},pointRows{j},'r.');
             hold on;
-		end;
+            [lineRows{j},lineCols{j}] = plotline(t,d);
+			plot(lineCols{j},lineRows{j});
+            hold on;
+        end;
 	end;
-	pause(0.5);
-end;
-  
+end
