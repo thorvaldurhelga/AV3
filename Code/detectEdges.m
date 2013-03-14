@@ -4,6 +4,9 @@ function edges = detectEdges(frame)
 % Output: Canny edges from the frame, but with irrelevant pixels in the image in each frame set to zero. A pixel is taken to be irrelevant if it is to the far left or right of the image, or if the depth of the pixel in the image is significantly greater than the depth of the object we are interested in 
 
 	% use canny edge detection to extract the edges from the image and depth image
+
+	
+
 	red_channel = frame.image(:,:,1);%rgb2gray(frame.image);
 	red_edges = edge(red_channel,'canny',[0.0124,0.0624],4);
 
@@ -14,7 +17,7 @@ function edges = detectEdges(frame)
 	blue_edges = edge(blue_channel,'canny',[0.0124,0.0624],4);
 
 	% combine the canny edges from both views
-	combined_edges = red_edges+green_edges+blue_edges;
+	combined_edges = blue_edges;%(red_edges+green_edges+blue_edges);
 
 	% scale the edge image so that it matches the XYZ image
 	combined_edges = imcrop(combined_edges,[30 30 620 480]); %[x_left y_top x_right y_bottom]

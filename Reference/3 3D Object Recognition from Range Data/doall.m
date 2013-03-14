@@ -1,14 +1,58 @@
 global model planelist planenorm facelines
 
-R = load('rngdata.asc');
+%%%%%%
+
+
+
+load('data1.mat')
+
+xyzFrame = frame(20).XYZ(:,:,:);
+
+
+%backgroundIndices = find(xyzFrame > 1400);
+%xyzFrame(backgroundIndices) = 0;
+
+xyzFrame1 = xyzFrame(:,:,1); 
+xyzFrame1v = xyzFrame1(:);
+xyzFrame2 = xyzFrame(:,:,2);
+xyzFrame2v = xyzFrame2(:);
+xyzFrame3 = xyzFrame(:,:,3);
+xyzFrame3v = xyzFrame3(:);
+
+xyzImage = [xyzFrame1v xyzFrame2v xyzFrame3v];
+
+% copy image to R, leaving out all rows that are background (too far away to be of interest)
+rowsToIgnore = find(xyzImage(:,3)>1400);
+index = true(1,size(xyzImage,1));
+index(rowsToIgnore') = false;
+R = xyzImage(index,:);
+
+
+%figure(1)
+%clf
+%hold on
+%plot3(R(:,1),R(:,2),R(:,3),'k.')
+
+%pause(100)
+
+% now do the segmentation...
+
+
+%%%%
+
+
+%R = load('rngdata.asc');
 figure(1)
 clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
-[NPts,W] = size(R);
-patchid = zeros(NPts,1);
+
+[NPts,W] = size(R);								%-- NPts = # points in the image per dimension, W = # dimensions
+patchid = zeros(NPts,1);							%-- patchid = the ID of the patch each point belongs to
 planelist = zeros(20,4);
+
+
 
 % find surface patches
 % here just get 5 first planes - a more intelligent process should be
@@ -135,4 +179,6 @@ for j = i+1 : count
 end
 end
 labeledpoints = ulabeledpoints(1:count,:);
+
+
 

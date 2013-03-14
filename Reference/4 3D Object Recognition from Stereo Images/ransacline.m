@@ -1,13 +1,20 @@
-% extracts a line of the form sin(t)*r + cos(t)*c = d from the
-% given edge pixels, returns a reduced list. Matched pixels
-% must lie within tol distance of the line and probd is the
-% probability that a pixel is part of the line. probnd is the 
-% probability that the second pixel lies on the same line
-% probf is the allowed failure probability. MINLEN is the minimum 
-% allowable line length. [rr,rc] are the count remaining pixels
+% extracts a line of the form sin(t)*r + cos(t)*c = d from the given edge pixels, returns a reduced list.
+ 
+% Matched pixels must lie within tol distance of the line 
+
+% probd is the probability that a pixel is part of the line = Pone = P1
+
+% probnd is the probability that the second pixel lies on the same line
+
+% probf is the allowed failure probability = Pall-f
+
+% MINLEN is the minimum allowable line length
+
+% [rr,rc] are the count remaining pixels
+
 % Selected pixels are on fign
+
 % [frfr,frfc] are the selected newcount points
-%
 
 function [flag,t,d,nr,nc,count,frfr,frfc,newcount] = ransacline(r,c,tol,probd,probnd,probf,MINLEN,fign)
 

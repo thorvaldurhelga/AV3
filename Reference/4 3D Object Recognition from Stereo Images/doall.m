@@ -1,13 +1,13 @@
 %% perform edge detection and RANSAC line fitting on left and right images
 
 clear all
- rand('state',300)
+rand('state',300) 				%-- resets the state of the random number generator
 
 % find left edges - use canny
 left = imread('left.jpg','jpg');
-leftr=left(:,:,1);
-leftedges = edge(leftr,'canny',[0.08,0.2],3);
-[lr,lc] = find(leftedges==1);
+leftr=left(:,:,1);				%-- leftr is the red channel of the left image
+leftedges = edge(leftr,'canny',[0.08,0.2],3);	%-- leftedges is the set of canny edges based on the red channel of the left image
+[lr,lc] = find(leftedges==1);			%-- [lr,lc] is a vector of row / column co-ordinates where there is a point on a canny edge
 
 % plot edges from left image
 
@@ -18,9 +18,9 @@ axis([0 640 0 480])
 axis ij
   
 % right image edges - use canny
-right = imread('right.jpg','jpg');
-rightr=right(:,:,1);
-rightedges = edge(rightr,'canny',[0.08,0.2],3);
+right = imread('right.jpg','jpg');		%-- rightr is the red channel of the right image
+rightr=right(:,:,1);				%-- rightedges is the set of canny edges based on the red channel of the right image
+rightedges = edge(rightr,'canny',[0.08,0.2],3);	%-- [rr,rc] is a vector of row / column co-ordinates where there is a point on a canny edge
 [rr,rc] = find(rightedges==1);
 
 % plot edges from right image
@@ -49,16 +49,16 @@ axis([0 640 0 480])
 axis ij
 hold on
   
-  flag = 1;
-  sr = lr;
-  sc = lc;
-  llinecount = 0;
-  llinea = zeros(100,2);
-  llinem = zeros(100,2);
-  llinel = zeros(100,1);
-  llineg = zeros(100,1);
-  llinet = zeros(100,1);
-  llined = zeros(100,1);
+  flag = 1;					%-- flag indicates that the process of overlaying lines should carry on
+  sr = lr;					%-- sr = source rows, set to row values of points where there is a canny edge in left image
+  sc = lc;					%-- sc = source columns, set to column values of points where there is a canny edge in left image
+  llinecount = 0;				%-- llinecount = number of lines found by ransac
+  llinea = zeros(100,2);			%-- llinea = ?
+  llinem = zeros(100,2);			%-- llinem = ?	
+  llinel = zeros(100,1);			%-- llinel = ?
+  llineg = zeros(100,1);			%-- llineg = ?	
+  llinet = zeros(100,1);			%-- llinet = ?
+  llined = zeros(100,1);			%-- llined = ?
   while flag == 1
     [flag,t,d,nr,nc,count,frl,fcl,newcountl] = ransacline(sr,sc,2,0.1,0.01,0.001,80,3);
     if flag == 1 & newcountl > 0 

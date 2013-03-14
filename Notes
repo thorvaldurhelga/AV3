@@ -3,7 +3,7 @@
 Canny edge detection
 RANSAC
 
-Output: set of edges of polygons
+Output: set of edges of polygons and plane equations
 
 2. Use the 3 large planes to register the 21 views together
 
