@@ -1,4 +1,4 @@
-function [pointRows,pointCols,lineRows,lineCols] = extractLines(edges, ransacIterations, showPlots)
+function lineData = extractLines(image, edges, ransacIterations, showPlots)
 %DETECTEDGES A pre-processing function that performs canny edge detection and removes irrelevant background information for the frame provided as input
 % INPUT: @edges - Binary image containing only edges in frame that is
 %        outputted by detectEdges.m
@@ -25,16 +25,36 @@ function [pointRows,pointCols,lineRows,lineCols] = extractLines(edges, ransacIte
     lineRows = {};
     lineCols = {};
     
+    linecount = 0;
+    linea = zeros(ransacIterations,2);
+    linem = zeros(ransacIterations,2);
+    linel = zeros(ransacIterations,1);
+    lineg = zeros(ransacIterations,1);
+    linet = zeros(ransacIterations,1);
+    lined = zeros(ransacIterations,1);
+    
 	% RANSAC
 	for j = 1:ransacIterations
 		j
 		[flag,t,d,nr,nc,count,pointRows{j},pointCols{j},pointCount] = ransacline(rows,cols,1,0.1,0.01,0.001,140,3);
         if pointCount > 0
-            plot(pointCols{j},pointRows{j},'r.');
-            hold on;
+            linecount = linecount+1;
+            [linea(linecount,:),linem(linecount,:),linel(linecount), ...
+                lineg(linecount)] = descrseg(pointRows{j},pointCols{j},image,4);
+            linet(linecount) = t;
+            lined(linecount) = d;
+            
             [lineRows{j},lineCols{j}] = plotline(t,d);
-			plot(lineCols{j},lineRows{j});
-            hold on;
+            
+            if(showPlots == true)
+                plot(pointCols{j},pointRows{j},'r.');
+                hold on;
+                plot(lineCols{j},lineRows{j});
+                hold on;
+            end;
         end;
 	end;
+    lineData = {linecount linea(1:linecount,:) linem(1:linecount,:) ...
+        linel(1:linecount) lineg(1:linecount) linet(1:linecount) ...
+        lined(1:linecount)};
 end
