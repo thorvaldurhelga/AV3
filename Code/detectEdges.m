@@ -13,14 +13,8 @@ function edges = detectEdges(frame)
 	edges(:,580:640) = 0;
 
 	% loop through the pixels in the XYZ image for the frame
-	for r = 1:480
-		for c = 1:640	
-			% if the depth value for the pixel in the XYZ image is greater than a certain value, set the intensity value to zero for that pixel in the edge map
-			if frame.XYZ(r,c,3) > 1600		
-				edges(r,c) = 0;
-			end % end of if statement
-		end % end of column for loop
-	end % end of row for loop 
+	backgroundIndices = find(frame.XYZ(:,:,3) > 1400);
+    edges(backgroundIndices) = 0;
 
 	% return the edges for the frame
 	retval = edges;
