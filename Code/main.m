@@ -1,10 +1,16 @@
 load '../Data/data1.mat'
-edges = {};
+allEdges = {};
 lineData = {};
+for i = 1:21
+    bwimage = rgb2gray(frame(i).image);
+	edges = edge(bwimage,'canny',[0.0124,0.0624],2.5);
+    edges(:,1:100) = 0;
+	edges(:,590:640) = 0;
+	backgroundIndices = find(frame(i).XYZ(:,:,3) > 1400);
+	edges(backgroundIndices) = 0;
 
-edges{1} = detectEdges(frame(1));
-edges{2} = detectEdges(frame(2));
-
-lineData{1} = extracLines(frame(1).image,edges,10,false);
-lineData{2} = extracLines(frame(2).image,edges,10,false);
-
+    allEdges{i} = edges;
+    figure(1);
+    imshow(allEdges{i});
+    lineData{i} = extractLines(frame(i).image,allEdges{i},10,true);
+end;

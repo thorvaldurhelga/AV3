@@ -13,7 +13,8 @@ function lineData = extractLines(image, edges, ransacIterations, showPlots)
 
 	[rows,cols] = find(edges==1);   
     if(showPlots == true)
-        figure(1);
+        fig = figure(2);
+        clf(fig);
         plot(cols,rows,'k.');
         axis([0 640 0 480]);
         axis ij;
