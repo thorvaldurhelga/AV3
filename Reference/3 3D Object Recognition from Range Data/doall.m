@@ -21,17 +21,23 @@ xyzFrame3v = xyzFrame3(:);
 
 xyzImage = [xyzFrame1v xyzFrame2v xyzFrame3v];
 
+depthThreshold = 800;
+
 % copy image to R, leaving out all rows that are background (too far away to be of interest)
-rowsToIgnore = find(xyzImage(:,3)>1400);
+rowsToIgnore = find(xyzImage(:,3)>depthThreshold);
 index = true(1,size(xyzImage,1));
 index(rowsToIgnore') = false;
-R = xyzImage(index,:);
+R2 = xyzImage(index,:);
 
 
-%figure(1)
-%clf
-%hold on
-%plot3(R(:,1),R(:,2),R(:,3),'k.')
+R = R2./1;% (R2./200)-400;
+
+figure(1)
+clf
+hold on
+plot3(R(:,1),R(:,2),R(:,3),'k.')
+
+
 
 %pause(100)
 
@@ -40,17 +46,21 @@ R = xyzImage(index,:);
 
 %%%%
 
+R2 = load('rngdata.asc');
 
-%R = load('rngdata.asc');
+
+
+
+
 figure(1)
 clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
 
-[NPts,W] = size(R);								%-- NPts = # points in the image per dimension, W = # dimensions
-patchid = zeros(NPts,1);							%-- patchid = the ID of the patch each point belongs to
-planelist = zeros(20,4);
+[NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
+patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
+planelist = zeros(20,4);						%-- a list of the number of planes that we've found
 
 
 
@@ -58,21 +68,26 @@ planelist = zeros(20,4);
 % here just get 5 first planes - a more intelligent process should be
 % used in practice. Here we hope the 4 largest will be included in the
 % 5 by virtue of their size
-remaining = R;
-for i = 1 : 4   
 
-  % select a random small surface patch
-  [oldlist,plane] = select_patch(remaining);
+remaining = R;							
+
+for i = 1 : 10   
+
+  % select a random small surface patch from the remaining points
+  [oldlist,plane] = select_patch(remaining);				%-- oldlist = ...
 
   % grow patch
   stillgrowing = 1;
   while stillgrowing
 
     % find neighbouring points that lie in plane
-    stillgrowing = 0;
+    stillgrowing = 0;							%-- until we find a bad fit we keep growing
+
     [newlist,remaining] = getallpoints(plane,oldlist,remaining,NPts);
+
     [NewL,W] = size(newlist);
     [OldL,W] = size(oldlist);
+
 if i == 1
  plot3(newlist(:,1),newlist(:,2),newlist(:,3),'r.')
  save1=newlist;
@@ -94,25 +109,33 @@ pause(1)
     if NewL > OldL + 50
       % refit plane
       [newplane,fit] = fitplane(newlist);
-[newplane',fit,NewL]
+
+%	[newplane',fit,NewL];
+
       planelist(i,:) = newplane';
-      if fit > 0.04*NewL       % bad fit - stop growing
+ 
+     if fit > 0.04*NewL       % bad fit - stop growing
         break
       end
+
       stillgrowing = 1;
+
       oldlist = newlist;
       plane = newplane;
+
     end
   end
 
-waiting=1
-	 pause(1)
+%	waiting=1
+%	pause(1)
 
 ['**************** Segmentation Completed']
 
 end
+
 %plot3(remaining(:,1),remaining(:,2),remaining(:,3),'y.')
-planelist(1:5,:)
+
+%planelist(1:5,:)
 
 
 modelfile

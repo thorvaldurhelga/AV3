@@ -32,7 +32,7 @@ function [fitlist,plane] = select_patch(points)			%-- points is the list of poin
 
     if fitcount > 10
       % fit a plane
-      [plane,resid] = fitplane(tmpnew(1:fitcount,:));
+      [plane,resid] = fitplane(tmpnew(1:fitcount,:))
 
       if resid < 0.1
         fitlist = tmpnew(1:fitcount,:);
