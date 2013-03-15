@@ -6,9 +6,9 @@ function [newlist,remaining] = getallpoints(plane,oldlist,P,NP)
   [N,W] = size(P);
   [Nold,W] = size(oldlist);
 
-  DISTTOL = 2;
+  DISTTOL = 4; % plane tolerance
 
-  PLANETOL = 20;
+  PLANETOL = 10; % distance from existing point tolerance
 
   tmpnewlist = zeros(NP,3);
   tmpnewlist(1:Nold,:) = oldlist;       % initialize fit list
