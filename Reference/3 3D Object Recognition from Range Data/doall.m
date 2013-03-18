@@ -53,9 +53,15 @@ R = xyzImage(index,:)./5;
 
 
 
+figure(1)
+clf
+hold on
+plot3(R(:,1),R(:,2),R(:,3),'k.')
+
 closestPoint = getClosestPoint(R);
 
 
+plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
 
 
 %pause(100)
@@ -71,13 +77,6 @@ R2 = load('rngdata.asc');
 
 
 
-figure(1)
-clf
-hold on
-plot3(R(:,1),R(:,2),R(:,3),'k.')
-hold on
-
-
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
 patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
 planelist = zeros(20,4);						%-- a list of the number of planes that we've found
@@ -91,26 +90,17 @@ planelist = zeros(20,4);						%-- a list of the number of planes that we've foun
 
 remaining = R;
 
- rightPoint = closestPoint;
-  leftPoint = closestPoint;
-  topPoint = closestPoint;
-  rightPoint(1) = rightPoint(1) + 40;
-  rightPoint(3) = rightPoint(3) + 10;
-  leftPoint(1) = leftPoint(1) - 40;
-  leftPoint(3) = leftPoint(3) + 10;
-  topPoint(2) = topPoint(2) + 20;
-  topPoint(3) = topPoint(3) + 10;
+ rightPoint = [closestPoint(1)+40 closestPoint(2)-20 closestPoint(3)+30];
+  leftPoint = [closestPoint(1)-40 closestPoint(2)-20 closestPoint(3)+30];
+  topPoint = [closestPoint(1) closestPoint(2)+20 closestPoint(3)+20];
+ 
   planePoints = [rightPoint; leftPoint; topPoint]
-  
-  plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
-  hold on
   plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
   hold on
   plot3(leftPoint(:,1),leftPoint(:,2),3000,'g.')
   hold on
   plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
   hold on
-  
 
 for i = 1 : 3 
     
@@ -119,7 +109,7 @@ for i = 1 : 3
 	l = length(R(:,1));
 
     for j = 1 : length(R(:,1))						%-- for each remaining point...
-	dist = (norm(R(j,:) - planePoints(i)));
+        dist = (norm(R(j,:) - planePoints(i,:)));
         distancesFromPoint = [distancesFromPoint;dist];
     end;
     
