@@ -49,7 +49,20 @@ R = xyzImage(index,:)./5;
 
 %R = R2./1;% (R2./200)-400;
 
+
+
+
+
+figure(1)
+clf
+hold on
+plot3(R(:,1),R(:,2),R(:,3),'k.')
+
 closestPoint = getClosestPoint(R);
+
+
+plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
+
 
 %pause(100)
 
@@ -58,13 +71,10 @@ closestPoint = getClosestPoint(R);
 
 %%%%
 
-%R2 = load('rngdata.asc');
+R2 = load('rngdata.asc');
 
-figure(1)
-clf
-hold on
-plot3(R(:,1),R(:,2),R(:,3),'k.')
-hold on
+
+
 
 
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
@@ -80,41 +90,17 @@ planelist = zeros(20,4);						%-- a list of the number of planes that we've foun
 
 remaining = R;
 
-rightPoint = closestPoint;
-leftPoint = closestPoint;
-topPoint = closestPoint;
-rightPoint(1) = rightPoint(1) + 40;
-rightPoint(3) = rightPoint(3) + 10;
-leftPoint(1) = leftPoint(1) - 40;
-leftPoint(3) = leftPoint(3) + 10;
-topPoint(2) = topPoint(2) + 20;
-topPoint(3) = topPoint(3) + 10;
-planePoints = [rightPoint; leftPoint; topPoint]
-  
-plot3(topPoint(:,1),topPoint(:,2),3000,'r.')
-
-nearestActualPoint = getClosestPointToPoint(R,topPoint);
-
-plot3(nearestActualPoint(:,1),nearestActualPoint(:,2),3000,'g.')
-
-
-
-%plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
-%plot3(leftPoint(:,1),leftPoint(:,2),3000,'g.')
-
-
-%plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
-  
-
-
-
-
-
-
-
-
-
-%{
+ rightPoint = [closestPoint(1)+40 closestPoint(2)-20 closestPoint(3)+30];
+  leftPoint = [closestPoint(1)-40 closestPoint(2)-20 closestPoint(3)+30];
+  topPoint = [closestPoint(1) closestPoint(2)+20 closestPoint(3)+20];
+ 
+  planePoints = [rightPoint; leftPoint; topPoint]
+  plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
+  hold on
+  plot3(leftPoint(:,1),leftPoint(:,2),3000,'g.')
+  hold on
+  plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
+  hold on
 
 for i = 1 : 3 
     
@@ -123,7 +109,7 @@ for i = 1 : 3
 	l = length(R(:,1));
 
     for j = 1 : length(R(:,1))						%-- for each remaining point...
-	dist = (norm(R(j,:) - planePoints(i)));
+        dist = (norm(R(j,:) - planePoints(i,:)));
         distancesFromPoint = [distancesFromPoint;dist];
     end;
     
@@ -138,7 +124,7 @@ for i = 1 : 3
   [oldlist,plane] = select_patches(remaining,pnt);				%-- oldlist is the list of points in the patch, plane is the best fit for the patch
 
 
-%	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'c.')
+	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'y.')
 
 waiting = 1
 pause(1)
@@ -295,4 +281,4 @@ labeledpoints = ulabeledpoints(1:count,:);
 %}
 
 
-%}
+
