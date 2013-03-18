@@ -107,11 +107,21 @@ remaining = R;
 
 for i = 1 : 3 
     
-    for j = 1 : length(R(1))						%-- for each remaining point...
-        dist(j) = norm(R(j,:) - planePoints(i));
+	distancesFromPoint = [];
+
+	l = length(R(:,1));
+
+    for j = 1 : length(R(:,1))						%-- for each remaining point...
+	dist = (norm(R(j,:) - planePoints(i)));
+        distancesFromPoint = [distancesFromPoint;dist];
     end;
     
-    pnt = R(find(dist == min(dist)),:)
+	minDistanceFromPoint = min(distancesFromPoint)
+
+
+%	dist = R(:,1)
+
+    pnt = R(find(distancesFromPoint == minDistanceFromPoint),:)
 
   % select a random small surface patch from the remaining points
   [oldlist,plane] = select_patches(remaining,pnt);				%-- oldlist is the list of points in the patch, plane is the best fit for the patch
