@@ -28,7 +28,7 @@ function [fitlist,plane] = select_patch(points, pnt)			%-- points is the list of
 
 
 
-for i = 1 : L						%-- for each remaining point...
+    for i = 1 : L						%-- for each remaining point...
 
       dist = norm(points(i,:) - pnt);				%-- dist is the euclidean distance between the current point and the random point
 
@@ -40,14 +40,16 @@ for i = 1 : L						%-- for each remaining point...
       else
         restcount = restcount + 1;				%-- otherwise we add one to the count of points excluded from the patch
         tmprest(restcount,:) = points(i,:);			%-- and add the point to the list of excluded points
-      end;
-end;
+      end
+    end
 
 %	max(dists)
 %	min(dists)
 %	fitcount
 
 %    oldlist = tmprest(1:restcount,:);				%-- ???
+
+    if fitcount > 10						%-- if we have more than ten points in our patch				
       
       % fit a plane
       [plane,resid] = fitplane(tmpnew(1:fitcount,:));		%-- plane is the fitted plane, resid is the residual error
@@ -63,6 +65,9 @@ end;
 	end 
 %}
 
-      fitlist = tmpnew(1:fitcount,:);				%-- set fitlist, the list of points included in the patch to return			
+        fitlist = tmpnew(1:fitcount,:);				%-- set fitlist, the list of points included in the patch to return			
 
+      end
+
+    end
 
