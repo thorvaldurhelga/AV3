@@ -4,7 +4,9 @@ global model planelist planenorm facelines
 
 load('data1.mat')
 
-xyzFrame = frame(21).XYZ(:,:,:);
+for q = 1:21
+
+xyzFrame = frame(q).XYZ(:,:,:);
 
 %backgroundIndices = find(xyzFrame > 1400);
 %xyzFrame(backgroundIndices) = 0;
@@ -280,5 +282,5 @@ labeledpoints = ulabeledpoints(1:count,:);
 
 %}
 
-
+end;
 
