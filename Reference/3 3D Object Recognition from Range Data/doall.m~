@@ -25,10 +25,10 @@ depthThreshold = 1400;
 
 % copy image to variable R, leaving out all rows that are background (too far away to be of interest) or all zeros
 
-leftRowsToIgnore = find(xyzImage(:,1)<-200);
-rightRowsToIgnore = find(xyzImage(:,1)>200);
+leftRowsToIgnore = find(xyzImage(:,1)<-100);
+rightRowsToIgnore = find(xyzImage(:,1)>100);
 
-topRowsToIgnore = find(xyzImage(:,2)<-200);
+topRowsToIgnore = find(xyzImage(:,2)<-100);
 bottomRowsToIgnore = find(xyzImage(:,2)>200);
 
 backgroundRowsToIgnore = find(xyzImage(:,3)>depthThreshold);
