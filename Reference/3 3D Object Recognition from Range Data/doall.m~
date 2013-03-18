@@ -61,7 +61,7 @@ plot3(R(:,1),R(:,2),R(:,3),'k.')
 closestPoint = getClosestPoint(R);
 
 
-plot3(closestPoint(:,1),closestPoint(:,2),closestPoint(:,3),'r.')
+plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
 
 
 %pause(100)
@@ -73,7 +73,7 @@ plot3(closestPoint(:,1),closestPoint(:,2),closestPoint(:,3),'r.')
 
 R2 = load('rngdata.asc');
 
-%{
+
 
 
 
@@ -262,5 +262,5 @@ labeledpoints = ulabeledpoints(1:count,:);
 
 %}
 
-%}
+
 

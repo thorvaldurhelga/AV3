@@ -73,7 +73,7 @@ plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
 
 R2 = load('rngdata.asc');
 
-%{
+
 
 
 
@@ -94,16 +94,27 @@ planelist = zeros(20,4);						%-- a list of the number of planes that we've foun
 % used in practice. Here we hope the 4 largest will be included in the
 % 5 by virtue of their size
 
-remaining = R;							
+remaining = R;
 
-%for i = 1 : 3   
-i = 0;
-while length(remaining(:,1))>0
+ rightPoint = closestPoint;
+  leftPoint = closestPoint;
+  topPoint = closestPoint;
+  rightPoint(1) = rightPoint(1) + 10;
+  leftPoint(1) = leftPoint(1) - 10;
+  topPoint(2) = topPoint(2) + 10;
+  planePoints = [rightPoint; leftPoint; topPoint];
+  
 
-	i=i+1;
+for i = 1 : 3 
+    
+    for j = 1 : length(R(1))						%-- for each remaining point...
+        dist(j) = norm(R(j,:) - planePoints(i));
+    end;
+    
+    pnt = R(find(dist == min(dist)),:)
 
   % select a random small surface patch from the remaining points
-  [oldlist,plane] = select_patch(remaining);				%-- oldlist is the list of points in the patch, plane is the best fit for the patch
+  [oldlist,plane] = select_patches(remaining,pnt);				%-- oldlist is the list of points in the patch, plane is the best fit for the patch
 
 
 	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'y.')
@@ -262,5 +273,5 @@ labeledpoints = ulabeledpoints(1:count,:);
 
 %}
 
-%}
+
 
