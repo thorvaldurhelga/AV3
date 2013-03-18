@@ -9,7 +9,7 @@ dist = abs(pointCloud(:,1)-point(1))+abs(pointCloud(:,2)-point(2))+abs(pointClou
 
 closestIndex = find(dist==min(dist))
 
-closestPoint = pointCloud(closestIndex,:);
+closestPoint = pointCloud(closestIndex(1),:);
 
 
 

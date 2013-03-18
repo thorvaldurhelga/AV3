@@ -4,8 +4,10 @@ global model planelist planenorm facelines
 
 load('data1.mat')
 
-for q = 1:21
+planes = {};
 
+for q = 1:21
+q
 xyzFrame = frame(q).XYZ(:,:,:);
 
 %backgroundIndices = find(xyzFrame > 1400);
@@ -81,7 +83,7 @@ R2 = load('rngdata.asc');
 
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
 patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
-planelist = zeros(20,4);						%-- a list of the number of planes that we've found
+planelist = zeros(3,4);						%-- a list of the number of planes that we've found
 
 
 
@@ -109,18 +111,25 @@ for i = 1 : 3
 	distancesFromPoint = [];
 
 	l = length(R(:,1));
-
-    for j = 1 : length(R(:,1))						%-- for each remaining point...
-        dist = (norm(R(j,:) - planePoints(i,:)));
-        distancesFromPoint = [distancesFromPoint;dist];
-    end;
     
-	minDistanceFromPoint = min(distancesFromPoint)
+    
+    %for j = 1 : length(R(:,1))						%-- for each remaining point...
+    %    dist = (norm(R(j,:) - planePoints(i,:)));
+    %    distancesFromPoint = [distancesFromPoint;dist];
+    %end;
+    
+    
+    
+	%minDistanceFromPoint = min(distancesFromPoint)
 
+    
+    
 
 %	dist = R(:,1)
 
-    pnt = R(find(distancesFromPoint == minDistanceFromPoint),:)
+    %pnt = R(find(distancesFromPoint == minDistanceFromPoint),:)
+    
+    pnt = getClosestPointToPoint(R,planePoints(i,:))
 
   % select a random small surface patch from the remaining points
   [oldlist,plane] = select_patches(remaining,pnt);				%-- oldlist is the list of points in the patch, plane is the best fit for the patch
@@ -208,7 +217,11 @@ pause(1)
 
 ['**************** Segmentation Completed']
 
+    
+
 end
+
+planes{q} = planelist;
 
 %plot3(remaining(:,1),remaining(:,2),remaining(:,3),'y.')
 
@@ -283,4 +296,12 @@ labeledpoints = ulabeledpoints(1:count,:);
 %}
 
 end;
+
+%{
+fid = fopen('planeEq.csv','wt');
+for i=1:size(planes,1)
+    fprintf(fid, '%d,%d,%d\n', planes{i,:});
+end;
+fclose(fid);
+%}
 
