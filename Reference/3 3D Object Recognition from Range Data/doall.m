@@ -49,14 +49,7 @@ R = xyzImage(index,:)./5;
 
 %R = R2./1;% (R2./200)-400;
 
-
-
-
-
 closestPoint = getClosestPoint(R);
-
-
-
 
 %pause(100)
 
@@ -65,11 +58,7 @@ closestPoint = getClosestPoint(R);
 
 %%%%
 
-R2 = load('rngdata.asc');
-
-
-
-
+%R2 = load('rngdata.asc');
 
 figure(1)
 clf
@@ -91,26 +80,41 @@ planelist = zeros(20,4);						%-- a list of the number of planes that we've foun
 
 remaining = R;
 
- rightPoint = closestPoint;
-  leftPoint = closestPoint;
-  topPoint = closestPoint;
-  rightPoint(1) = rightPoint(1) + 40;
-  rightPoint(3) = rightPoint(3) + 10;
-  leftPoint(1) = leftPoint(1) - 40;
-  leftPoint(3) = leftPoint(3) + 10;
-  topPoint(2) = topPoint(2) + 20;
-  topPoint(3) = topPoint(3) + 10;
-  planePoints = [rightPoint; leftPoint; topPoint]
+rightPoint = closestPoint;
+leftPoint = closestPoint;
+topPoint = closestPoint;
+rightPoint(1) = rightPoint(1) + 40;
+rightPoint(3) = rightPoint(3) + 10;
+leftPoint(1) = leftPoint(1) - 40;
+leftPoint(3) = leftPoint(3) + 10;
+topPoint(2) = topPoint(2) + 20;
+topPoint(3) = topPoint(3) + 10;
+planePoints = [rightPoint; leftPoint; topPoint]
   
-  plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
-  hold on
-  plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
-  hold on
-  plot3(leftPoint(:,1),leftPoint(:,2),3000,'g.')
-  hold on
-  plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
-  hold on
+plot3(topPoint(:,1),topPoint(:,2),3000,'r.')
+
+nearestActualPoint = getClosestPointToPoint(R,topPoint);
+
+plot3(nearestActualPoint(:,1),nearestActualPoint(:,2),3000,'g.')
+
+
+
+%plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
+%plot3(leftPoint(:,1),leftPoint(:,2),3000,'g.')
+
+
+%plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
   
+
+
+
+
+
+
+
+
+
+%{
 
 for i = 1 : 3 
     
@@ -134,7 +138,7 @@ for i = 1 : 3
   [oldlist,plane] = select_patches(remaining,pnt);				%-- oldlist is the list of points in the patch, plane is the best fit for the patch
 
 
-	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'y.')
+%	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'c.')
 
 waiting = 1
 pause(1)
@@ -291,4 +295,4 @@ labeledpoints = ulabeledpoints(1:count,:);
 %}
 
 
-
+%}
