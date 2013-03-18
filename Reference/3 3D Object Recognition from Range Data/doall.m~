@@ -4,8 +4,7 @@ global model planelist planenorm facelines
 
 load('data1.mat')
 
-xyzFrame = frame(20).XYZ(:,:,:);
-
+xyzFrame = frame(21).XYZ(:,:,:);
 
 %backgroundIndices = find(xyzFrame > 1400);
 %xyzFrame(backgroundIndices) = 0;
@@ -25,22 +24,22 @@ depthThreshold = 1400;
 
 % copy image to variable R, leaving out all rows that are background (too far away to be of interest) or all zeros
 
-leftRowsToIgnore = find(xyzImage(:,1)<-100);
-rightRowsToIgnore = find(xyzImage(:,1)>100);
+%leftRowsToIgnore = find(xyzImage(:,1)<-200);
+%rightRowsToIgnore = find(xyzImage(:,1)>200);
 
-topRowsToIgnore = find(xyzImage(:,2)<-100);
-bottomRowsToIgnore = find(xyzImage(:,2)>200);
+%topRowsToIgnore = find(xyzImage(:,2)<-200);
+%bottomRowsToIgnore = find(xyzImage(:,2)>200);
 
 backgroundRowsToIgnore = find(xyzImage(:,3)>depthThreshold);
 zeroRowsToIgnore = find(abs(xyzImage(:,1))+abs(xyzImage(:,2))+abs(xyzImage(:,3))==0);
 
 index = true(1,size(xyzImage,1));
 
-index(leftRowsToIgnore') = false;
-index(rightRowsToIgnore') = false;
+%index(leftRowsToIgnore') = false;
+%index(rightRowsToIgnore') = false;
 
-index(topRowsToIgnore') = false;
-index(bottomRowsToIgnore') = false;
+%index(topRowsToIgnore') = false;
+%index(bottomRowsToIgnore') = false;
 
 index(backgroundRowsToIgnore') = false;
 index(zeroRowsToIgnore') = false;
@@ -50,11 +49,19 @@ R = xyzImage(index,:)./5;
 
 %R = R2./1;% (R2./200)-400;
 
+
+
+
+
 figure(1)
 clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
+closestPoint = getClosestPoint(R);
+
+
+plot3(closestPoint(:,1),closestPoint(:,2),closestPoint(:,3),'r.')
 
 
 %pause(100)
@@ -66,7 +73,7 @@ plot3(R(:,1),R(:,2),R(:,3),'k.')
 
 R2 = load('rngdata.asc');
 
-
+%{
 
 
 
@@ -255,4 +262,5 @@ labeledpoints = ulabeledpoints(1:count,:);
 
 %}
 
+%}
 
