@@ -1,0 +1,10 @@
+# Fdb version 2
+["latex"] 0 "BookExtraction.tex" "BookExtraction.dvi" "BookExtraction" 
+  "BookExtraction.tex" 1363811301 885 df33cb1269b01bfc414b6d4df2cf4db0 ""
+["pdflatex"] 1363811332 "BookExtraction.tex" "BookExtraction.pdf" "BookExtraction" 
+  "BookExtraction.aux" 1363811305 8 a94a2480d3289e625eea47cd1b285758 ""
+  "BookExtraction.tex" 1363811313 893 0bd87b1a8fbb9a573f311b84c45c9b78 ""
+  "e.g., `I\hbox'" 0 -1 0 ""
+  "e.g., `\hobx'" 0 -1 0 ""
+  "job aborted, no legal \end found" 0 -1 0 ""
+  "see Figure \ref" 0 -1 0 ""

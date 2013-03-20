@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  20 MAR 2013 16:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  20 MAR 2013 20:28
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -970,28 +970,82 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./Introduction.tex) (./PlaneExtraction.tex) (./PlaneRegistration.tex)
-(./BookExtraction.tex) (./BookRegistration.tex) (./Evaluation.tex) (./Code.tex)
-[1
+(./Introduction.tex) (./PreProcessing.tex
+<Images/1-Image(1).png, id=4, 962.59625pt x 722.7pt>
+File: Images/1-Image(1).png Graphic file (type png)
 
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./AV3 Report.aux) ) 
+<use Images/1-Image(1).png>
+Package pdftex.def Info: Images/1-Image(1).png used on input line 10.
+(pdftex.def)             Requested size: 230.46576pt x 173.02147pt.
+
+<Images/2-Range(1).png, id=6, 1001.7425pt x 778.91pt>
+File: Images/2-Range(1).png Graphic file (type png)
+
+<use Images/2-Range(1).png>
+Package pdftex.def Info: Images/2-Range(1).png used on input line 16.
+(pdftex.def)             Requested size: 230.46576pt x 179.19307pt.
+) [1
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Plan
+eExtraction.tex
+<Images/4-Points(1).png, id=16, 996.72375pt x 780.9175pt>
+File: Images/4-Points(1).png Graphic file (type png)
+
+<use Images/4-Points(1).png>
+Package pdftex.def Info: Images/4-Points(1).png used on input line 19.
+(pdftex.def)             Requested size: 230.46576pt x 180.5605pt.
+
+<Images/5-RegionGrowing(1).png, id=17, 992.70876pt x 781.92125pt>
+File: Images/5-RegionGrowing(1).png Graphic file (type png)
+
+<use Images/5-RegionGrowing(1).png>
+Package pdftex.def Info: Images/5-RegionGrowing(1).png used on input line 26.
+(pdftex.def)             Requested size: 230.46576pt x 181.52039pt.
+ [2 <./Images/1-Image(1).png> <./Images/2-Range(1).png> <./Images/4-Points(1).p
+ng> <./Images/5-RegionGrowing(1).png>])
+(./PlaneRegistration.tex) (./BookExtraction.tex
+
+Package caption Warning: \label before \caption on input line 7.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:bookPoints' on page 3 undefined on input line 2.
+
+<Images/6-BookPoints(1).png, id=27, 997.7275pt x 776.9025pt>
+File: Images/6-BookPoints(1).png Graphic file (type png)
+
+<use Images/6-BookPoints(1).png>
+Package pdftex.def Info: Images/6-BookPoints(1).png used on input line 6.
+(pdftex.def)             Requested size: 256.07481pt x 199.39372pt.
+) (./BookRegistration.tex) (./Evaluation.tex)
+(./Code.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+) [3 <./Images/6-BookPoints(1).png>] [4] (./AV3 Report.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17782 strings out of 493633
- 381093 string characters out of 3143378
- 464118 words of memory out of 3000000
- 20702 multiletter control sequences out of 15000+200000
- 6514 words of font info for 24 fonts, out of 3000000 for 9000
+ 17853 strings out of 493633
+ 382398 string characters out of 3143378
+ 468202 words of memory out of 3000000
+ 20757 multiletter control sequences out of 15000+200000
+ 10233 words of font info for 37 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 63i,6n,74p,590b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb>
-Output written on "AV3 Report.pdf" (1 page, 36609 bytes).
+ 63i,17n,74p,734b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "AV3 Report.pdf" (4 pages, 898885 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
