@@ -5,7 +5,7 @@ load('../../Data/data1.mat')
 planes = zeros(3,4,21); % Contains plane equations of the three planes extracted
 pointLists = {};        % Contains the points of all three planes extracted
 bookPoints = {};        % Contains the points of the book
-cornerPoints = zeros(21,3);
+closestPoints = zeros(21,3);    % 
 pointsOnPlane = {};
 
 for q = 1:21
@@ -40,8 +40,8 @@ clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
-closestPoint = getClosestPoint(R);
-plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
+closestPoints(q,:) = getClosestPoint(R);
+plot3(closestPoints(q,1),closestPoints(q,2),3000,'r.')
 
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
 patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
@@ -54,9 +54,9 @@ planelist = zeros(3,4);						%-- a list of the number of planes that we've found
 
 remaining = R;
 
-rightPoint = [closestPoint(1)+40 closestPoint(2)-20 closestPoint(3)+30];
-leftPoint = [closestPoint(1)-40 closestPoint(2)-20 closestPoint(3)+30];
-topPoint = [closestPoint(1) closestPoint(2)+20 closestPoint(3)+20];
+rightPoint = [closestPoints(q,1)+40 closestPoints(q,2)-20 closestPoints(q,3)+30];
+leftPoint = [closestPoints(q,1)-40 closestPoints(q,2)-20 closestPoints(q,3)+30];
+topPoint = [closestPoints(q,1) closestPoints(q,2)+20 closestPoints(q,3)+20];
 
 planePoints = [rightPoint; leftPoint; topPoint]
 plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
@@ -67,15 +67,14 @@ plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
 hold on
 
 
-
 for i = 1 : 3 
    
 	l = length(R(:,1));
     
-    cornerPoints(q,:) = getClosestPointToPoint(R,planePoints(i,:))
+    pnt = getClosestPointToPoint(R,planePoints(i,:))
 
     % select a random small surface patch from the remaining points
-    [oldlist,plane] = select_patches(remaining,cornerPoints(q,:));	%-- oldlist is the list of points in the patch, plane is the best fit for the patch
+    [oldlist,plane] = select_patches(remaining,pnt);	%-- oldlist is the list of points in the patch, plane is the best fit for the patch
 
 	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'y.')
 
@@ -176,13 +175,14 @@ maxXPoint = max(pointsOnPlane{3}(:,1));
 bookPoints{q} = R_minus_plane_points(find( ...
     (R_minus_plane_points(:,1) > minXPoint) & ...
     (R_minus_plane_points(:,1) < maxXPoint) & ...
-    (R_minus_plane_points(:,2) > closestPoint(q,2))),:);
+    (R_minus_plane_points(:,2) > closestPoints(q,2))),:);
 
 % Get points above top plane
 [abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
 bookPoints{q} = bookPoints{q}(aboveIndices,:);
 plot3(bookPoints{q}(:,1),bookPoints{q}(:,2),bookPoints{q}(:,3),'y.');
     
-saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
+%saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
+
 end;
 

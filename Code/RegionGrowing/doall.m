@@ -5,9 +5,8 @@ load('../../Data/data1.mat')
 planes = zeros(3,4,21); % Contains plane equations of the three planes extracted
 pointLists = {};        % Contains the points of all three planes extracted
 bookPoints = {};        % Contains the points of the book
-cornerPoints = zeros(21,3);
-closestPoints = zeros(21,3);
-pointsOnPlane = {};
+closestPoints = zeros(21,3);    % Contains the closest point in each image - e.g. the corner
+pointsOnPlane = {}; % Contains the points on each of the three planes
 
 for q = 1:21
     pointLists{q} = [];
@@ -183,7 +182,7 @@ bookPoints{q} = R_minus_plane_points(find( ...
 bookPoints{q} = bookPoints{q}(aboveIndices,:);
 plot3(bookPoints{q}(:,1),bookPoints{q}(:,2),bookPoints{q}(:,3),'y.');
     
-%saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
+saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
 
 end;
 
