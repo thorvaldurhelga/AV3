@@ -20,6 +20,6 @@ function R = findRotationMatrix(p1, p2)
 	angle = acos(dot(n1,n2))
 
 	% then we define the rotation matrix using makehgtform
-	R = makehgtform('axisrotate',axis,angle);
+	R = makehgtform('axisrotate',axis,angle)(1:3,1:3);
 
 end

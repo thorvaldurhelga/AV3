@@ -5,11 +5,16 @@ load('../../Data/data1.mat')
 planes = zeros(3,4,21); % Contains plane equations of the three planes extracted
 pointLists = {};        % Contains the points of all three planes extracted
 bookPoints = {};        % Contains the points of the book
-closestPoints = zeros(21,3);    % Contains the closest point in each image - e.g. the corner
-pointsOnPlane = {}; % Contains the points on each of the three planes
+<<<<<<< HEAD
+closestPoints = {};     % Contains the closest point in each frame
+=======
+closestPoints = zeros(21,3);    % 
+pointsOnPlane = {};
+>>>>>>> 3dc24cb1a733284562ac718a06e5a2f85926aa3b
 
 for q = 1:21
     pointLists{q} = [];
+	
 q
 xyzFrame = frame(q).XYZ(:,:,:);
 
@@ -40,8 +45,13 @@ clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
+<<<<<<< HEAD
+closestPoints{q} = getClosestPoint(R);
+plot3(closestPoints{q}(:,1),closestPoints{q}(:,2),3000,'r.')
+=======
 closestPoints(q,:) = getClosestPoint(R);
 plot3(closestPoints(q,1),closestPoints(q,2),3000,'r.')
+>>>>>>> 3dc24cb1a733284562ac718a06e5a2f85926aa3b
 
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
 patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
@@ -178,11 +188,19 @@ bookPoints{q} = R_minus_plane_points(find( ...
     (R_minus_plane_points(:,2) > closestPoints(q,2))),:);
 
 % Get points above top plane
+<<<<<<< HEAD
+%[abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
+
+plot3(bookPoints{q}(aboveIndices,1),bookPoints{q}(aboveIndices,2),bookPoints{q}(aboveIndices,3),'y.');
+    
+%saveas(fig,strcat('../../Images/Test/',int2str(q)),'png');
+=======
 [abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
 bookPoints{q} = bookPoints{q}(aboveIndices,:);
 plot3(bookPoints{q}(:,1),bookPoints{q}(:,2),bookPoints{q}(:,3),'y.');
     
-saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
+%saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
 
+>>>>>>> 3dc24cb1a733284562ac718a06e5a2f85926aa3b
 end;
 
