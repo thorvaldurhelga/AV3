@@ -5,6 +5,8 @@ load('../../Data/data1.mat')
 planes = zeros(3,4,21); % Contains plane equations of the three planes extracted
 pointLists = {};        % Contains the points of all three planes extracted
 bookPoints = {};        % Contains the points of the book
+cornerPoints = zeros(21,3);
+pointsOnPlane = {};
 
 for q = 1:21
     pointLists{q} = [];
@@ -64,16 +66,16 @@ hold on
 plot3(topPoint(:,1),topPoint(:,2),3000,'y.')
 hold on
 
-pointsOnPlane = {};
+
 
 for i = 1 : 3 
    
 	l = length(R(:,1));
     
-    cornerPnt = getClosestPointToPoint(R,planePoints(i,:))
+    cornerPoints(q,:) = getClosestPointToPoint(R,planePoints(i,:))
 
     % select a random small surface patch from the remaining points
-    [oldlist,plane] = select_patches(remaining,cornerPnt);	%-- oldlist is the list of points in the patch, plane is the best fit for the patch
+    [oldlist,plane] = select_patches(remaining,cornerPoints(q,:));	%-- oldlist is the list of points in the patch, plane is the best fit for the patch
 
 	plot3(oldlist(:,1),oldlist(:,2),oldlist(:,3),'y.')
 
@@ -174,14 +176,13 @@ maxXPoint = max(pointsOnPlane{3}(:,1));
 bookPoints{q} = R_minus_plane_points(find( ...
     (R_minus_plane_points(:,1) > minXPoint) & ...
     (R_minus_plane_points(:,1) < maxXPoint) & ...
-    (R_minus_plane_points(:,2) > cornerPnt(2))),:);
+    (R_minus_plane_points(:,2) > closestPoint(q,2))),:);
 
 % Get points above top plane
 [abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
-
-
+bookPoints{q} = bookPoints{q}(aboveIndices,:);
 plot3(bookPoints{q}(:,1),bookPoints{q}(:,2),bookPoints{q}(:,3),'y.');
     
-saveas(fig,strcat('../../Images/Test/',int2str(q)),'png');
+saveas(fig,strcat('../../Images/BookExtraction3/',int2str(q)),'png');
 end;
 
