@@ -175,8 +175,12 @@ bookPoints{q} = R_minus_plane_points(find( ...
     (R_minus_plane_points(:,1) > minXPoint) & ...
     (R_minus_plane_points(:,1) < maxXPoint) & ...
     (R_minus_plane_points(:,2) > cornerPnt(2))),:);
-%plot3(bookPoints{q}(:,1),bookPoints{q}(:,2),bookPoints{q}(:,3),'y.');
+
+% Get points above top plane
+%[abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
+
+plot3(bookPoints{q}(aboveIndices,1),bookPoints{q}(aboveIndices,2),bookPoints{q}(aboveIndices,3),'y.');
     
-saveas(fig,int2str(q),'png');
+%saveas(fig,strcat('../../Images/Test/',int2str(q)),'png');
 end;
 
