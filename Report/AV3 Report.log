@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  20 MAR 2013 22:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  20 MAR 2013 23:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1030,17 +1030,19 @@ Package pdftex.def Info: Images/5-RegionGrowing(1).png used on input line 26.
 (pdftex.def)             Requested size: 230.46576pt x 181.52039pt.
  [2 <./Images/1-Image(1).png> <./Images/2-Range(1).png> <./Images/4-Points(1).p
 ng> <./Images/5-RegionGrowing(1).png>])
-(./PlaneRegistration.tex) (./BookExtraction.tex
+(./BookExtraction.tex
 <Images/6-BookPoints(1).png, id=27, 997.7275pt x 776.9025pt>
 File: Images/6-BookPoints(1).png Graphic file (type png)
 
 <use Images/6-BookPoints(1).png>
 Package pdftex.def Info: Images/6-BookPoints(1).png used on input line 6.
 (pdftex.def)             Requested size: 256.07481pt x 199.39372pt.
-) (./BookRegistration.tex) (./Evaluation.tex)
-(./Code.tex (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
+) (./PlaneRegistration.tex) (./BookFusion.tex)
+(./Evaluation.tex) (./Code.tex
+(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (../Code/Final/run.m [3 <./Images/6-BookPoints(1).png>]
+)
+(../Code/Final/run.m [3 <./Images/6-BookPoints(1).png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
@@ -1067,7 +1069,7 @@ Overfull \hbox (30.69943pt too wide) in paragraph at lines 27--31
 (../Code/Final/getPointsAbovePlane.m)) [7] (./AV3 Report.aux) ) 
 Here is how much of TeX's memory you used:
  20184 strings out of 493633
- 412597 string characters out of 3143378
+ 412579 string characters out of 3143378
  542269 words of memory out of 3000000
  23045 multiletter control sequences out of 15000+200000
  10580 words of font info for 38 fonts, out of 3000000 for 9000
@@ -1081,7 +1083,7 @@ e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
 11/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2011
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "AV3 Report.pdf" (7 pages, 931206 bytes).
+Output written on "AV3 Report.pdf" (7 pages, 931555 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
