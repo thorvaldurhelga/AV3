@@ -1,0 +1,92 @@
+load('../Data/data1.mat')
+
+xyzFrame = frame(20).XYZ(:,:,:);
+
+backgroundIndices = find(xyzFrame > 1400);
+xyzFrame(backgroundIndices) = 0;
+
+%imagesc(xyzFrame(:,:,3))
+
+%place a point on the image in a random location
+
+for tries = 1:10
+
+tries
+
+seedXCoordinate = ceil(480*rand)
+seedYCoordinate = ceil(640*rand)
+
+seedIndex = [seedXCoordinate seedYCoordinate 3]
+
+test = xyzFrame(seedXCoordinate,seedYCoordinate,3)
+
+if test > 0
+
+% grow patch
+for i = 1:10
+	for j = 1:10
+	xyzFrame(seedXCoordinate+i,seedYCoordinate+j,3)  = 3000;
+	xyzFrame(seedXCoordinate+j,seedYCoordinate+i,3)  = 3000;
+	end
+end
+
+imagesc(xyzFrame(:,:,3))
+
+pause()
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%{
+xyzFrame1 = xyzFrame(:,:,1);
+xyzFrame1v = xyzFrame1(:);
+xyzFrame2 = xyzFrame(:,:,2);
+xyzFrame2v = xyzFrame2(:);
+xyzFrame3 = xyzFrame(:,:,3);
+xyzFrame3v = xyzFrame3(:);
+
+xyzImage = [xyzFrame1v xyzFrame2v xyzFrame3v];
+
+R = xyzImage
+
+%}
+
+
+
+
+
+%R = zFrame
+%figure(1)
+%clf
+%hold on
+%plot3(R(:,:,1),R(:,:,2),R(:,:,3),'k.')
+
+
+
+%[rows,columns] = size(zFrame);
+
+%patchID = zeros(rows,1);
+
+%planelist = zeros(20,4);
+
+
+
+
+
+
+
