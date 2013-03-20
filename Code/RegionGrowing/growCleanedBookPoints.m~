@@ -1,8 +1,8 @@
 % growCleanedBookPoints:
 
-function progess = growCleanedBookPoints(progress)
+function output = growCleanedBookPoints(progress)
 
-	frontierPoints = progress{1}
+	frontierPoints = progress{1};
 	cleanedPoints = progress{2};
 	remainingPoints = progress{3};
 	shouldContinue = progress{4};
@@ -35,22 +35,39 @@ function progess = growCleanedBookPoints(progress)
 	% calculate the euclidean distances
 	euclideanDistances = sqrt(D);
 
-	size(euclideanDistances)
-
+	% create the list of new frontier points
+	distanceThreshold = 15;
+	newFrontierPoints = [];
+	for r = 1:size(euclideanDistances,1) % for each frontier point
 		
-	distantPoints = find(euclideanDistances(:,3)>depthThreshold);
-	zeroRowsToIgnore = find(abs(xyzImage(:,1))+abs(xyzImage(:,2))+abs(xyzImage(:,3))==0);
+		distantPoints = find(euclideanDistances(r,:)>distanceThreshold);
+		index = true(1,size(remainingPoints,1));
+		index(distantPoints') = false;
 
-	index = true(1,size(xyzImage,1));
-	index(backgroundRowsToIgnore') = false;
-	index(zeroRowsToIgnore') = false;
+		if(isempty(newFrontierPoints)) 
+			newFrontierPoints = remainingPoints(index,:);
+		else
+			newFrontierPoints = union(newFrontierPoints,remainingPoints(index,:),'rows');	
+		end
 
-	R = xyzImage(index,:)./5;	
+	end
 
-	progress{1} = frontierPoints;
-	progress{2} = cleanedPoints;
-	progress{3} = remainingPoints;
-	progress{4} = shouldContinue;
+	% update the variables
+	progress{1} = newFrontierPoints;
+	progress{2} = [cleanedPoints;frontierPoints];
+	progress{3} = setdiff(remainingPoints,newFrontierPoints,'rows');
+	progress{4} = 1-isempty(newFrontierPoints);
 
+	plot3(newFrontierPoints(:,1),newFrontierPoints(:,2),newFrontierPoints(:,3),'y.');
+	plot3(frontierPoints(:,1),frontierPoints(:,2),frontierPoints(:,3),'b.');
+	pause(0.1);
+
+	if(progress{4}==1)
+
+		progress = growCleanedBookPoints(progress);
+
+	end
+
+	output = progress;
 
 end
