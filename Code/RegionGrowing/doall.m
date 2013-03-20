@@ -2,9 +2,9 @@ global model planelist planenorm facelines
 
 %%%%%% -- data preparation
 
-load('data1.mat')
+load('../../Data/data1.mat')
 
-planes = {};
+planes = zeros(3,4,21);
 
 for q = 1:21
 q
@@ -221,7 +221,7 @@ pause(1)
 
 end
 
-planes{q} = planelist;
+planes(:,:,q = planelist;
 
 %plot3(remaining(:,1),remaining(:,2),remaining(:,3),'y.')
 
@@ -296,12 +296,4 @@ labeledpoints = ulabeledpoints(1:count,:);
 %}
 
 end;
-
-%{
-fid = fopen('planeEq.csv','wt');
-for i=1:size(planes,1)
-    fprintf(fid, '%d,%d,%d\n', planes{i,:});
-end;
-fclose(fid);
-%}
 
