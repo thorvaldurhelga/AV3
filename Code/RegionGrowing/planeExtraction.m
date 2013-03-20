@@ -1,4 +1,4 @@
-function [planeEq planePoints bookPoints closestPoints] = 
+function [pointCloud planeEq planePoints closestPoints] = ...
     planeExtraction(frame)
 
 planePoints = {};       % Points on each individual plane
@@ -25,9 +25,6 @@ index(backgroundRowsToIgnore') = false;
 index(zeroRowsToIgnore') = false;
 pointCloud = pointCloud(index,:)./5;
 
-fig = figure(1);
-clf
-hold on
 plot3(pointCloud(:,1),pointCloud(:,2),pointCloud(:,3),'k.')
 
 closestPoints = getClosestPoint(pointCloud);
@@ -86,7 +83,7 @@ for i = 1 : 3
             plot3(newlist(:,1),newlist(:,2),newlist(:,3),'g.')
             save3=newlist;
         end
-        pause(0.1)
+        pause(0.01)
 
         if NewL > OldL + 50
             ['refitting plane']
@@ -110,30 +107,3 @@ for i = 1 : 3
 
     planePoints{i} = oldlist;
 end
-%{
-% subtract points in R that are on planes 
-[~,planeRowsToIgnore] = ...
-    ismember([planePoints{1};planePoints{2};planePoints{3};],pointCloud,'rows');
-planeRowsToIgnore(find(planeRowsToIgnore > 0));
-
-planeIndex = true(1,size(pointCloud,1));
-planeIndex(planeRowsToIgnore') = false;
-reducedPointCloud = pointCloud(planeIndex,:,:);
-
-% subtract points too low / to left / to right of planes
-minXPoint = min(planePoints{3}(:,1));
-maxXPoint = max(planePoints{3}(:,1));
-bookPoints{frameNo} = reducedPointCloud(find( ...
-    (reducedPointCloud(:,1) > minXPoint) & ...
-    (reducedPointCloud(:,1) < maxXPoint) & ...
-    (reducedPointCloud(:,2) > closestPoints(frameNo,2))),:);
-
-% Get points above top plane
-[abovePoints aboveIndices] = ...
-    getPointsAbovePlane(bookPoints{frameNo},planeEq(3,:,frameNo));
-bookPoints{frameNo} = bookPoints{frameNo}(aboveIndices,:);
-plot3(bookPoints{frameNo}(:,1), ...
-    bookPoints{frameNo}(:,2),bookPoints{frameNo}(:,3),'y.');
-% saveas(fig,strcat('../../Images/BookExtraction3/',int2str(frameNo)),'png');
-
-%}

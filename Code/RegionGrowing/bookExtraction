@@ -1,0 +1,27 @@
+%{
+% subtract points in R that are on planes 
+[~,planeRowsToIgnore] = ...
+    ismember([planePoints{1};planePoints{2};planePoints{3};],pointCloud,'rows');
+planeRowsToIgnore(find(planeRowsToIgnore > 0));
+
+planeIndex = true(1,size(pointCloud,1));
+planeIndex(planeRowsToIgnore') = false;
+reducedPointCloud = pointCloud(planeIndex,:,:);
+
+% subtract points too low / to left / to right of planes
+minXPoint = min(planePoints{3}(:,1));
+maxXPoint = max(planePoints{3}(:,1));
+bookPoints{frameNo} = reducedPointCloud(find( ...
+    (reducedPointCloud(:,1) > minXPoint) & ...
+    (reducedPointCloud(:,1) < maxXPoint) & ...
+    (reducedPointCloud(:,2) > closestPoints(frameNo,2))),:);
+
+% Get points above top plane
+[abovePoints aboveIndices] = ...
+    getPointsAbovePlane(bookPoints{frameNo},planeEq(3,:,frameNo));
+bookPoints{frameNo} = bookPoints{frameNo}(aboveIndices,:);
+plot3(bookPoints{frameNo}(:,1), ...
+    bookPoints{frameNo}(:,2),bookPoints{frameNo}(:,3),'y.');
+% saveas(fig,strcat('../../Images/BookExtraction3/',int2str(frameNo)),'png');
+
+%}
