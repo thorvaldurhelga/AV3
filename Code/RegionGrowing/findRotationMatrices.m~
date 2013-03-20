@@ -30,7 +30,7 @@ function rotationMatrices = findRotationMatrices(planes)
 		% then we define the rotation matrix using makehgtform
 		R = makehgtform('axisrotate',axis,angle);
 	
-		% if it's the same frame we just use the identity matrix for the rotation, otherwise use R
+		% if it's the reference frame we just use the identity matrix for the rotation, otherwise use R
 		if (i==17)
 			rotationMatrices{i} = eye(3); 
 		else
