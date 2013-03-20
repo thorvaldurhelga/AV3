@@ -5,9 +5,11 @@ load('../../Data/data1.mat')
 planes = zeros(3,4,21); % Contains plane equations of the three planes extracted
 pointLists = {};        % Contains the points of all three planes extracted
 bookPoints = {};        % Contains the points of the book
+closestPoints = {};     % Contains the closest point in each frame
 
 for q = 1:21
     pointLists{q} = [];
+	
 q
 xyzFrame = frame(q).XYZ(:,:,:);
 
@@ -38,8 +40,8 @@ clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
-closestPoint = getClosestPoint(R);
-plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
+closestPoints{q} = getClosestPoint(R);
+plot3(closestPoints{q}(:,1),closestPoints{q}(:,2),3000,'r.')
 
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
 patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
@@ -177,11 +179,10 @@ bookPoints{q} = R_minus_plane_points(find( ...
     (R_minus_plane_points(:,2) > cornerPnt(2))),:);
 
 % Get points above top plane
-[abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
+%[abovePoints aboveIndices] = getPointsAbovePlane(bookPoints{q},planes(3,:,q));
 
-
-plot3(bookPoints{q}(:,1),bookPoints{q}(:,2),bookPoints{q}(:,3),'y.');
+plot3(bookPoints{q}(aboveIndices,1),bookPoints{q}(aboveIndices,2),bookPoints{q}(aboveIndices,3),'y.');
     
-saveas(fig,strcat('../../Images/Test/',int2str(q)),'png');
+%saveas(fig,strcat('../../Images/Test/',int2str(q)),'png');
 end;
 

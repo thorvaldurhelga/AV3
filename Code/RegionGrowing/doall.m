@@ -5,9 +5,11 @@ load('../../Data/data1.mat')
 planes = zeros(3,4,21); % Contains plane equations of the three planes extracted
 pointLists = {};        % Contains the points of all three planes extracted
 bookPoints = {};        % Contains the points of the book
+closestPoints = {};     % Contains the closest point in each frame
 
 for q = 1:21
     pointLists{q} = [];
+	
 q
 xyzFrame = frame(q).XYZ(:,:,:);
 
@@ -38,8 +40,8 @@ clf
 hold on
 plot3(R(:,1),R(:,2),R(:,3),'k.')
 
-closestPoint = getClosestPoint(R);
-plot3(closestPoint(:,1),closestPoint(:,2),3000,'r.')
+closestPoints{q} = getClosestPoint(R);
+plot3(closestPoints{q}(:,1),closestPoints{q}(:,2),3000,'r.')
 
 [NPts,W] = size(R);							%-- NPts = # points in the image per dimension, W = # dimensions
 patchid = zeros(NPts,1);						%-- patchid = the ID of the patch each point belongs to
@@ -52,9 +54,9 @@ planelist = zeros(3,4);						%-- a list of the number of planes that we've found
 
 remaining = R;
 
-rightPoint = [closestPoint(1)+40 closestPoint(2)-20 closestPoint(3)+30];
-leftPoint = [closestPoint(1)-40 closestPoint(2)-20 closestPoint(3)+30];
-topPoint = [closestPoint(1) closestPoint(2)+20 closestPoint(3)+20];
+rightPoint = [closestPoints{q}(1)+40 closestPoints{q}(2)-20 closestPoints{q}(3)+30];
+leftPoint = [closestPoints{q}(1)-40 closestPoints{q}(2)-20 closestPoints{q}(3)+30];
+topPoint = [closestPoints{q}(1) closestPoints{q}(2)+20 closestPoints{q}(3)+20];
 
 planePoints = [rightPoint; leftPoint; topPoint]
 plot3(rightPoint(:,1),rightPoint(:,2),3000,'b.')
