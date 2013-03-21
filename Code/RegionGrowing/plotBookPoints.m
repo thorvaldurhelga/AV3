@@ -8,7 +8,7 @@ function y = plotBookPoints(bookPoints,planes)
 	% get the rotation matrices
 	rotationMatrices = findRotationMatrices(planes);
 
-	% apply the rotation to each frame
+	% apply the rotation to each book point cloud
 	rotatedBookPoints = {};
 	for i = 1:21
 		rotatedBookPoint = (rotationMatrices{i}*cleanedBookPoints{i}')';
@@ -22,24 +22,30 @@ function y = plotBookPoints(bookPoints,planes)
 		meanBookPoints{i} = meanBookPoint;
 	end
 
-	% apply the translation to each book point cloud
+	% apply the translation to each rotated book point cloud
 	translatedBookPoints = {};
 	for i = 1:21
 		translatedBookPoints{i} = rotatedBookPoints{i}-repmat(meanBookPoints{i},size(rotatedBookPoints{i},1),1);
 	end
 
-	% put all the bookpoints together
-	allBookPoints = [];
+	% apply the scaling to each transformed book point cloud
+	scaledBookPoints = {};
 	for i = 1:21
-		allBookPoints = [allBookPoints;translatedBookPoints{i}];
+		scaledBookPoints{i} = translatedBookPoints{i}.*5;
 	end
 
 	% plot the results
 	fig = figure(1);
 	clf
 	hold on
-	plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
 
+	% put all the bookpoints together
+	allBookPoints = [];
+	for i = 1:21
+		allBookPoints = [allBookPoints;scaledBookPoints{i}];
+		plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
+		saveas(fig,strcat('../../Images/FusedBookPoints/3DScaled/Book',int2str(i),'.png'));
+	end
 	y = translatedBookPoints;
 
 end
