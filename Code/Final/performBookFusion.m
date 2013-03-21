@@ -28,7 +28,8 @@ for i = 1:21
 	allBookPoints = [allBookPoints;scaledBookPoints{i}];
 	plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
 	saveas(fig, ...
-		strcat('../../Images/FusedBookPoints/3D/Book',int2str(i),'.png'));
+		strcat('../../Images/FusedBookPoints/3D/Book', ...
+		int2str(i),'.png'));
 end
 
 end

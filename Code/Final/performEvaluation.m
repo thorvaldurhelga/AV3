@@ -24,7 +24,8 @@ for i = 1:21
 	allBookPoints = [allBookPoints;scaledBookPoints{i}];
 	plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
 	saveas(fig, ...
-		strcat('../../Images/FusedBookPoints/3D/Book',int2str(i),'.png'));
+		strcat('../../Images/FusedBookPoints/3D/Book', ...
+		int2str(i),'.png'));
 end
 
 % 2. compute the determinant of the covariance matrix
@@ -32,7 +33,8 @@ end
 % get the mean of all of the book points for each image
 meanBookPoints = getMeanBookPoints(bookPoints);
 
-% go through each of the frames applying the mean book point translation to the closest point
+% go through each of the frames applying the mean book point translation 
+% to the closest point
 translatedPoints = {};
 for i = 1:21
 	translatedPoints{i} = closestPoints(i,:)-meanBookPoints{i};
