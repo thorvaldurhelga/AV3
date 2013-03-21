@@ -8,7 +8,7 @@
 function transformedBookPoints = performPlaneRegistration(bookPoints,planes)
 
 % get the rotation matrices
-rotationMatrices = findRotationMatrices(planes);
+[angles rotationMatrices] = findRotationMatrices(planes);
 
 % apply the rotation to each book point cloud
 rotatedBookPoints = {};

@@ -5,54 +5,29 @@
 % produced by the plane registration algorithm
 
 % Output:
-% allBookPoints: a point cloud containing all of the book points, scaled appropriately
+% allBookPoints: a point cloud containing all of the book points, 
+% scaled appropriately
 
 
 function allBookPoints = performBookFusion(transformedBookPoints)
 
-	% clean up the bookpoints
-	cleanedBookPoints = getCleanedBookPoints(bookPoints);
+% apply the scaling to each transformed book point cloud
+scaledBookPoints = {};
+for i = 1:21
+	scaledBookPoints{i} = transformedBookPoints{i}.*5;
+end
 
-	% get the rotation matrices
-	rotationMatrices = findRotationMatrices(planes);
+% plot the results
+fig = figure(1);
+clf
+hold on
 
-	% apply the rotation to each book point cloud
-	rotatedBookPoints = {};
-	for i = 1:21
-		rotatedBookPoint = (rotationMatrices{i}*cleanedBookPoints{i}')';
-		rotatedBookPoints{i} = rotatedBookPoint;
-	end
-
-	% find the mean bookpoint in each frame
-	meanBookPoints = {};
-	for i = 1:21
-		meanBookPoint = mean(rotatedBookPoints{i});
-		meanBookPoints{i} = meanBookPoint;
-	end
-
-	% apply the translation to each rotated book point cloud
-	translatedBookPoints = {};
-	for i = 1:21
-		translatedBookPoints{i} = rotatedBookPoints{i}-repmat(meanBookPoints{i},size(rotatedBookPoints{i},1),1);
-	end
-
-	% apply the scaling to each transformed book point cloud
-	scaledBookPoints = {};
-	for i = 1:21
-		scaledBookPoints{i} = translatedBookPoints{i}.*5;
-	end
-
-	% plot the results
-	fig = figure(1);
-	clf
-	hold on
-
-	% put all the bookpoints together
-	allBookPoints = [];
-	for i = 1:21
-		allBookPoints = [allBookPoints;scaledBookPoints{i}];
-		plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
-		saveas(fig,strcat('../../Images/FusedBookPoints/3DScaled/Book',int2str(i),'.png'));
-	end
+% put all the bookpoints together
+allBookPoints = [];
+for i = 1:21
+	allBookPoints = [allBookPoints;scaledBookPoints{i}];
+	plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
+	saveas(fig,strcat('../../Images/FusedBookPoints/3D/Book',int2str(i),'.png'));
+end
 
 end

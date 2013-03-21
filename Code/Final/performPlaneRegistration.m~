@@ -13,7 +13,7 @@ rotationMatrices = findRotationMatrices(planes);
 % apply the rotation to each book point cloud
 rotatedBookPoints = {};
 for i = 1:21
-	rotatedBookPoint = (rotationMatrices{i}*cleanedBookPoints{i}')';
+	rotatedBookPoint = (rotationMatrices{i}(1,2)*cleanedBookPoints{i}')';
 	rotatedBookPoints{i} = rotatedBookPoint;
 end
 
