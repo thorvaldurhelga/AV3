@@ -3,19 +3,23 @@ To extract the set of points that represented the book we used couple of thresho
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{Images/6-BookPoints(1).png}
-	\caption{Book points for the foundation frame (frame 17) extracted and displayed in yellow}
-	\label{fig:bookPoints}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/6-BookPoints(1).png}
+		\subcaption{}
+		\label{fig:bookPoints}
+	\end{subfigure}%
+	\hspace{1cm}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/6-BookPoints-frame2(1).png}
+		\subcaption{}
+		\label{fig:bookPointsFrame2}
+	\end{subfigure}
+	\caption{Book points for the foundation frame 17 (a) and frame 2 (b) displayed in yellow.}
 \end{figure}
 
 An example of a frame for which the book extraction worked less well (frame 2) is shown in figure \ref{fig:bookPointsFrame2}. In this figure it is apparent that there are a number of yellow points on the top plane that are not actually part of the book.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Images/6-BookPoints-frame2.png}
-	\caption{Book points for frame 2 extracted and displayed in yellow.}
-	\label{fig:bookPointsFrame2}
-\end{figure}
 
 To fix this, we created a recursive algorithm that used a region growing approach to distinguish true book points from noise, based on the following two observations:
 
