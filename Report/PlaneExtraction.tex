@@ -1,10 +1,10 @@
 \subsection{Plane Extraction}
 
-To perform the plane extraction, we used the region growing algorithm described in the lectures in the context of system 6. In general, we concentrated on tailoring the algorithm so that it worked quickly and effectively, rather than re-implementing functionality that was already present in the example code. Our main innovation was to use our knowledge of the problem to optimize the process of patch selection. Aside from that change, and the pre-processing described in the previous section, our main modifications to the example code consisted of tuning parameters of the region growing algorithm so that it worked well with the supplied data. We describe both the patch selection and region growing here.
+To perform the plane extraction, we used the region growing algorithm described in the lectures in the context of system 6. In general, we concentrated on tailoring the algorithm so that it worked quickly and effectively, rather than re-implementing functionality that was already present in the example code. Our main innovation was to use our knowledge of the problem to optimize the process of patch selection. Aside from that change, and the pre-processing described in the previous section, our main modifications to the example code consisted of tuning parameters of the region growing algorithm so that it worked well with the supplied data. We describe both the patch selection and region growing here. The matlab code to perform the plane extraction is shown in section \ref{PlaneExtractionCode} of this report.
 
 \subsubsection{Patch Selection}
 
-The approach that the example code takes to patch selection can be summarized by the following three step algorithm (implemented in the function \emph{select\_patch.mj} in the example code:
+The approach that the example code takes to patch selection can be summarized by the following three step algorithm (implemented in the function \emph{select\_patch.m} in the example code:
 
 \begin{enumerate}
 	\item Pick a seed point at random from the point cloud

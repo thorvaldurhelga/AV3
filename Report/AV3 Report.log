@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  21 MAR 2013 13:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  21 MAR 2013 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1050,14 +1050,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 File: Images/1-rawZImage.png Graphic file (type png)
 
 <use Images/1-rawZImage.png>
-Package pdftex.def Info: Images/1-rawZImage.png used on input line 24.
+Package pdftex.def Info: Images/1-rawZImage.png used on input line 22.
 (pdftex.def)             Requested size: 230.46576pt x 172.84944pt.
 
 <Images/3-RangeReduced.png, id=14, 578.16pt x 434.1018pt>
 File: Images/3-RangeReduced.png Graphic file (type png)
 
 <use Images/3-RangeReduced.png>
-Package pdftex.def Info: Images/3-RangeReduced.png used on input line 30.
+Package pdftex.def Info: Images/3-RangeReduced.png used on input line 28.
 (pdftex.def)             Requested size: 230.46576pt x 173.0415pt.
 ) (./PlaneExtraction.tex [2 <./Images/1-rawZImage.png (PNG copy)> <./Images/3-R
 angeReduced.png (PNG copy)>]
@@ -1089,8 +1089,7 @@ File: Images/6-BookPoints-frame2.png Graphic file (type png)
 <use Images/6-BookPoints-frame2.png>
 Package pdftex.def Info: Images/6-BookPoints-frame2.png used on input line 15.
 (pdftex.def)             Requested size: 256.07481pt x 192.26392pt.
- [4 <./Images/6-BookPoints(1).png> <./Images/6-BookPoints-frame2.png (PNG copy)
->]
+ [4 <./Images/6-BookPoints(1).png>]
 <Images/6-RegionGrowingCleaning.png, id=35, 578.16pt x 434.1018pt>
 File: Images/6-RegionGrowingCleaning.png Graphic file (type png)
 
@@ -1098,16 +1097,147 @@ File: Images/6-RegionGrowingCleaning.png Graphic file (type png)
 Package pdftex.def Info: Images/6-RegionGrowingCleaning.png used on input line 
 32.
 (pdftex.def)             Requested size: 256.07481pt x 192.26392pt.
-) (./PlaneRegistration.tex
+) (./PlaneRegistration.tex [5 <./Images/6-BookPoints-frame2.png (PNG copy)> <./
+Images/6-RegionGrowingCleaning.png (PNG copy)>]) (./BookFusion.tex [6]) (./Eval
+uation.tex
+<Images/Book1.png, id=42, 578.16pt x 434.1018pt>
+File: Images/Book1.png Graphic file (type png)
+ <use Images/Book1.png>
+Package pdftex.def Info: Images/Book1.png used on input line 20.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-LaTeX Warning: Reference `fig:foundation' on page 5 undefined on input line 3.
+<Images/Book2.png, id=43, 578.16pt x 434.1018pt>
+File: Images/Book2.png Graphic file (type png)
+ <use Images/Book2.png>
+Package pdftex.def Info: Images/Book2.png used on input line 26.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-[5 <./Images/6-RegionGrowingCleaning.png (PNG copy)>]) (./BookFusion.tex)
-(./Evaluation.tex) (./Code.tex
-(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+<Images/Book3.png, id=44, 578.16pt x 434.1018pt>
+File: Images/Book3.png Graphic file (type png)
+ <use Images/Book3.png>
+Package pdftex.def Info: Images/Book3.png used on input line 32.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book4.png, id=45, 578.16pt x 434.1018pt>
+File: Images/Book4.png Graphic file (type png)
+ <use Images/Book4.png>
+Package pdftex.def Info: Images/Book4.png used on input line 38.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book5.png, id=46, 578.16pt x 434.1018pt>
+File: Images/Book5.png Graphic file (type png)
+ <use Images/Book5.png>
+Package pdftex.def Info: Images/Book5.png used on input line 44.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book6.png, id=47, 578.16pt x 434.1018pt>
+File: Images/Book6.png Graphic file (type png)
+ <use Images/Book6.png>
+Package pdftex.def Info: Images/Book6.png used on input line 50.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book7.png, id=48, 578.16pt x 434.1018pt>
+File: Images/Book7.png Graphic file (type png)
+ <use Images/Book7.png>
+Package pdftex.def Info: Images/Book7.png used on input line 56.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book8.png, id=49, 578.16pt x 434.1018pt>
+File: Images/Book8.png Graphic file (type png)
+ <use Images/Book8.png>
+Package pdftex.def Info: Images/Book8.png used on input line 62.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book9.png, id=50, 578.16pt x 434.1018pt>
+File: Images/Book9.png Graphic file (type png)
+ <use Images/Book9.png>
+Package pdftex.def Info: Images/Book9.png used on input line 68.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book10.png, id=51, 578.16pt x 434.1018pt>
+File: Images/Book10.png Graphic file (type png)
+ <use Images/Book10.png>
+Package pdftex.def Info: Images/Book10.png used on input line 74.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book11.png, id=52, 578.16pt x 434.1018pt>
+File: Images/Book11.png Graphic file (type png)
+ <use Images/Book11.png>
+Package pdftex.def Info: Images/Book11.png used on input line 80.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book12.png, id=53, 578.16pt x 434.1018pt>
+File: Images/Book12.png Graphic file (type png)
+ <use Images/Book12.png>
+Package pdftex.def Info: Images/Book12.png used on input line 86.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book13.png, id=54, 578.16pt x 434.1018pt>
+File: Images/Book13.png Graphic file (type png)
+ <use Images/Book13.png>
+Package pdftex.def Info: Images/Book13.png used on input line 92.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book14.png, id=55, 578.16pt x 434.1018pt>
+File: Images/Book14.png Graphic file (type png)
+ <use Images/Book14.png>
+Package pdftex.def Info: Images/Book14.png used on input line 98.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book15.png, id=56, 578.16pt x 434.1018pt>
+File: Images/Book15.png Graphic file (type png)
+ <use Images/Book15.png>
+Package pdftex.def Info: Images/Book15.png used on input line 104.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book16.png, id=57, 578.16pt x 434.1018pt>
+File: Images/Book16.png Graphic file (type png)
+ <use Images/Book16.png>
+Package pdftex.def Info: Images/Book16.png used on input line 117.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book17.png, id=58, 578.16pt x 434.1018pt>
+File: Images/Book17.png Graphic file (type png)
+ <use Images/Book17.png>
+Package pdftex.def Info: Images/Book17.png used on input line 123.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book18.png, id=59, 578.16pt x 434.1018pt>
+File: Images/Book18.png Graphic file (type png)
+ <use Images/Book18.png>
+Package pdftex.def Info: Images/Book18.png used on input line 129.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book19.png, id=60, 578.16pt x 434.1018pt>
+File: Images/Book19.png Graphic file (type png)
+ <use Images/Book19.png>
+Package pdftex.def Info: Images/Book19.png used on input line 135.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book20.png, id=61, 578.16pt x 434.1018pt>
+File: Images/Book20.png Graphic file (type png)
+ <use Images/Book20.png>
+Package pdftex.def Info: Images/Book20.png used on input line 141.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
+
+<Images/Book21.png, id=62, 578.16pt x 434.1018pt>
+File: Images/Book21.png Graphic file (type png)
+ <use Images/Book21.png>
+Package pdftex.def Info: Images/Book21.png used on input line 147.
+(pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 )
-(../Code/Final/run.m [6]) (../Code/Final/planeExtraction.m
+(./Code.tex (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+) (../Code/Final/run.m [7] [8 <./Images/Book1.png (PNG copy)> <./Images/Book2.p
+ng (PNG copy)> <./Images/Book3.png (PNG copy)> <./Images/Book4.png (PNG copy)> 
+<./Images/Book5.png (PNG copy)> <./Images/Book6.png (PNG copy)> <./Images/Book7
+.png (PNG copy)> <./Images/Book8.png (PNG copy)> <./Images/Book9.png (PNG copy)
+> <./Images/Book10.png (PNG copy)> <./Images/Book11.png (PNG copy)> <./Images/B
+ook12.png (PNG copy)> <./Images/Book13.png (PNG copy)> <./Images/Book14.png (PN
+G copy)> <./Images/Book15.png (PNG copy)>]) [9 <./Images/Book16.png (PNG copy)>
+ <./Images/Book17.png (PNG copy)> <./Images/Book18.png (PNG copy)> <./Images/Bo
+ok19.png (PNG copy)> <./Images/Book20.png (PNG copy)> <./Images/Book21.png (PNG
+ copy)>] (../Code/Final/planeExtraction.m
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 19.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omlcmr.fd
@@ -1115,37 +1245,34 @@ File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 19.
- [7] [8])
-(../Code/Final/getClosestPoint.m) (../Code/Final/getClosestPointToPoint.m
-[9]) (../Code/Final/bookExtraction.m)
-Overfull \hbox (30.69943pt too wide) in paragraph at lines 27--31
+ [10] [11])
+(../Code/Final/getClosestPoint.m) (../Code/Final/getClosestPointToPoint.m)
+(../Code/Final/bookExtraction.m [12])
+Overfull \hbox (30.69943pt too wide) in paragraph at lines 27--30
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-(../Code/Final/getPointsAbovePlane.m)) [10] [11] (./AV3 Report.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(../Code/Final/getPointsAbovePlane.m)) [13] (./AV3 Report.aux) ) 
 Here is how much of TeX's memory you used:
- 21741 strings out of 493488
- 465004 string characters out of 3141326
- 597393 words of memory out of 3000000
- 24574 multiletter control sequences out of 15000+200000
+ 21857 strings out of 493488
+ 467211 string characters out of 3141326
+ 600619 words of memory out of 3000000
+ 24669 multiletter control sequences out of 15000+200000
  10580 words of font info for 38 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,17n,74p,799b,2138s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "AV3 Report.pdf" (11 pages, 224313 bytes).
+ 63i,17n,74p,885b,2144s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/tex
+live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
+/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/201
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "AV3 Report.pdf" (13 pages, 1286652 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

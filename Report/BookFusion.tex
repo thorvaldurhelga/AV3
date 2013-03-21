@@ -5,8 +5,12 @@ The final task was to apply the transformations described above to each image, g
 \begin{enumerate}
 	\item Apply the correct rotation matrix to each book point cloud by multiplying the transpose of the book point cloud (in which each (x,y,z) point is represented by a column) by the rotation matrix
 	\item Translate each book point cloud by subtracting the co-ordinates of its mean point from the co-ordinates of every point
-	\item Combine the individual point clouds to create the overall image
+	\item Combine the individual point clouds to create the overall image, after multiplying each by the scaling factor so that the points are at the same scale as the original images
 \end{enumerate}
+
+The matlab code to perform the book point fusion is shown in section \ref{PlaneRegistrationCode} of this report.
+
+
 
 
 

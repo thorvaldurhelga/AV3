@@ -1,8 +1,6 @@
 \subsection{Plane Registration}
 
-As mentioned earlier in this report, for registering views we decided to use frame number 17 as our foundation frame (see Figure \ref{fig:foundation}). We used this frame for computing the rotation and translation between that frame and all the others.
-
-The plane registration step in the assignment consists of three stages:
+As mentioned earlier in this report, for registering views we decided to use frame number 17 as our foundation frame. We used this frame for computing the rotation and translation between that frame and all the others. The plane registration step in the assignment consists of three stages:
 
 \begin{enumerate}
 	\item Match large planes in the different frames to each other to identify which plane in each frame corresponds to each plane in the foundation frame
@@ -10,7 +8,7 @@ The plane registration step in the assignment consists of three stages:
 	\item Estimate the translation required to align each frame with the reference frame 
 \end{enumerate}
 
-Here we discuss each of these stages in turn.
+Here we discuss each of these stages in turn. The matlab code to perform the plane registration is shown in section \ref{PlaneRegistrationCode} of this report.
 
 \subsubsection{Plane Matching}
 
