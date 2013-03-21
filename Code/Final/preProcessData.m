@@ -1,4 +1,5 @@
-% preProcessData: function to pre-process the raw range data from a frame, creating a 3D point cloud that can be used with the region growing algorithm
+% preProcessData: function to pre-process the raw range data from a frame, 
+% creating a 3D point cloud that can be used with the region growing algorithm
 
 % Input:
 % frame: a single frame from the input data
