@@ -34,7 +34,8 @@ cleaningOutput = growCleanedBookPoints(regionGrowingInput);
 cleanedBookPoints{i} = cleaningOutput{2};
 
 % plot the results
-plot3(cleanedBookPoints{i}(:,1),cleanedBookPoints{i}(:,2),cleanedBookPoints{i}(:,3),'r.')
+plot3(cleanedBookPoints{i}(:,1),...
+	cleanedBookPoints{i}(:,2),cleanedBookPoints{i}(:,3),'r.')
 pause(1);
 
 end

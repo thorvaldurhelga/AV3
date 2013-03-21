@@ -21,7 +21,8 @@ plot3(bookPoints{i}(:,1),bookPoints{i}(:,2),bookPoints{i}(:,3),'k.')
 % Calculate the highest book point
 % this will be the seed point
 % the idea is that we're resonably sure that this will be a true book point
-highestBookPoint = bookPoints{i}(find(bookPoints{i}(:,2)==max(bookPoints{i}(:,2))),:);
+highestBookPoint = ...
+	bookPoints{i}(find(bookPoints{i}(:,2)==max(bookPoints{i}(:,2))),:);
 
 % Find the true book points
 regionGrowingInput{1} = highestBookPoint;

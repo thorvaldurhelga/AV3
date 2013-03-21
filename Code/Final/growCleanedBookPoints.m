@@ -38,7 +38,8 @@ index(distantPoints') = false;
 if(isempty(newFrontierPoints)) 
 	newFrontierPoints = remainingPoints(index,:);
 else
-	newFrontierPoints = union(newFrontierPoints,remainingPoints(index,:),'rows');	
+	newFrontierPoints = ...
+		union(newFrontierPoints,remainingPoints(index,:),'rows');	
 end
 
 end
@@ -50,8 +51,9 @@ progress{3} = setdiff(remainingPoints,newFrontierPoints,'rows');
 progress{4} = 1-isempty(newFrontierPoints);
 
 fig = figure(1);
-plot3(newFrontierPoints(:,1),newFrontierPoints(:,2),newFrontierPoints(:,3),'y.');
-plot3(frontierPoints(:,1),frontierPoints(:,2),frontierPoints(:,3),'b.');
+plot3(newFrontierPoints(:,1), ...
+	newFrontierPoints(:,2),newFrontierPoints(:,3),'y.');
+plot3(frontierPoints(:,1), frontierPoints(:,2),frontierPoints(:,3),'b.');
 
 pause(0.1);
 
