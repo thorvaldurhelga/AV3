@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  21 MAR 2013 14:38
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  21 MAR 2013 14:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1221,41 +1221,41 @@ Overfull \hbox (37.74942pt too wide) in paragraph at lines 2--4
 [9 <./Images/Book16.png (PNG copy)> <./Images/Book17.png (PNG copy)> <./Images/
 Book18.png (PNG copy)> <./Images/Book19.png (PNG copy)> <./Images/Book20.png (P
 NG copy)> <./Images/Book21.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 32.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 27.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 32.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 27.
 )
 (../Code/Final/planeExtraction.m [10] [11]) (../Code/Final/getClosestPoint.m)
-(../Code/Final/getClosestPointToPoint.m [12]) (../Code/Final/bookExtraction.m)
-Overfull \hbox (30.69943pt too wide) in paragraph at lines 27--30
+(../Code/Final/getClosestPointToPoint.m) [12] (../Code/Final/bookExtraction.m
+Overfull \hbox (30.69943pt too wide) in paragraph at lines 27--29
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-(../Code/Final/getPointsAbovePlane.m) [13]) [14] (./AV3 Report.aux) ) 
+) (../Code/Final/getPointsAbovePlane.m)) [13] (./AV3 Report.aux) ) 
 Here is how much of TeX's memory you used:
- 20308 strings out of 493633
- 415373 string characters out of 3143378
- 546193 words of memory out of 3000000
- 23145 multiletter control sequences out of 15000+200000
+ 20309 strings out of 493633
+ 415400 string characters out of 3143378
+ 546167 words of memory out of 3000000
+ 23146 multiletter control sequences out of 15000+200000
  10580 words of font info for 38 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 63i,17n,74p,885b,2144s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/loca
-l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local
-/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/
-texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
-e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "AV3 Report.pdf" (14 pages, 1296183 bytes).
+ 63i,17n,74p,885b,2142s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2
+011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+11/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "AV3 Report.pdf" (13 pages, 1296143 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
