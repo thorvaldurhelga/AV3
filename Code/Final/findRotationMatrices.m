@@ -21,7 +21,8 @@ p1 = planes(1,:,i);
 n1 = [p1(1) p1(2) p1(3)]';
 n2 = [p2(1) p2(2) p2(3)]';
 	
-% the axis of rotation is the cross product of the two vectors (cross product is orthogonal to both vectors)
+% the axis of rotation is the cross product of the two vectors 
+% (cross product is orthogonal to both vectors)
 axis = cross(n1,n2);
 	
 % the normals are normalised, so the angle in radians is
@@ -30,7 +31,8 @@ angle = acos(dot(n1,n2));
 % then we define the rotation matrix using makehgtform
 R = makehgtform('axisrotate',axis,angle);
 	
-% if it's the reference frame we just use the identity matrix for the rotation, otherwise use R
+% if it's the reference frame we just use the identity matrix for the rotation, 
+% otherwise use R
 if (i==17)
 	rotationMatrices{i} = eye(3); 
 else

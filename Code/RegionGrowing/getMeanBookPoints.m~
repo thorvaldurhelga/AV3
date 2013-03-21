@@ -1,6 +1,6 @@
 % getMeanBookPoints
 
-function output = getMeanBookPoints(bookPoints)
+function meanBookPoints = getMeanBookPoints(bookPoints)
 
 	% find the mean bookpoint in each frame
 	meanBookPoints = {};
