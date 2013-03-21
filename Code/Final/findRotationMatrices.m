@@ -1,4 +1,4 @@
-%findRotationMatrices: find the rotation matrices for the planes
+% findRotationMatrices: find the rotation matrices for the planes
 
 % Inputs:
 % planes: the plane list
