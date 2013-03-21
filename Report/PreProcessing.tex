@@ -11,7 +11,7 @@ Before extracting the planes, we performed the following pre-processing steps:
 	\item We normalized the data by dividing all of the X,Y, and Z co-ordinate values by 5. This was found to have a favorable effect on the speed and accuracy of the region growing algorithm
 \end{itemize}
 
-Figure \ref{fig:preprocessing} illustrates the effect of our transformations. The raw XYZ depth data for frame 17 (which we used as our foundation frame) is shown in the picture on the left of the figure, and the transformed data is shown on the right. The matlab code to perform the pre-processing is shown in section \ref{planeExtractionCode} of this report.
+Figure \ref{fig:preprocessing} illustrates the effect of our transformations. The raw XYZ depth data for frame 17 (which we used as our foundation frame) is shown in the picture on the left of the figure, and the transformed data is shown on the right. The matlab code to perform the pre-processing is shown in section \ref{PreProcessingCode} of this report.
 
 % eliminate the background  After having observed the range data, we decided to eliminate all pixels with the range $Z > 1400$, which removed the background. Additionally we transformed the range data in X-Y space to a pointcloud which made it easier to work with and visualize (see Figure \ref{fig:foundation}).
 

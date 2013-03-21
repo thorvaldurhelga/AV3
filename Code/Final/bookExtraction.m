@@ -1,3 +1,12 @@
+% bookExtraction: function to extract the book points from
+% the point clouds
+
+% Input: The point clouds, plane equations, plane points, and
+% closest points from each image
+
+% Output: A cell array containing the cleaned book points for
+% each frame
+
 function cleanedBookPoints = ...
        bookExtraction(pointCloud,planeEq,planePoints,closestPoints)
 
@@ -24,7 +33,6 @@ bookPoints = reducedPointCloud(find( ...
 bookPoints = bookPoints(aboveIndices,:);
 plot3(bookPoints(:,1), bookPoints(:,2),bookPoints(:,3),'y.');
 pause(0.01);
-% saveas(fig,strcat('../../Images/BookExtraction3/',int2str(frameNo)),'png');
 
 % clean up the bookpoints
 cleanedBookPoints = getCleanedBookPoints(bookPoints);
