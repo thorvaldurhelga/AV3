@@ -58,8 +58,11 @@ function output = growCleanedBookPoints(progress)
 	progress{3} = setdiff(remainingPoints,newFrontierPoints,'rows');
 	progress{4} = 1-isempty(newFrontierPoints);
 
+	fig = figure(1);
 	plot3(newFrontierPoints(:,1),newFrontierPoints(:,2),newFrontierPoints(:,3),'y.');
 	plot3(frontierPoints(:,1),frontierPoints(:,2),frontierPoints(:,3),'b.');
+	%saveas(fig,strcat('../../Images/BookCleaning1/Iterations/Iteration',int2str(ceil(rand()*100000))),'png');
+
 	pause(0.1);
 
 	if(progress{4}==1)

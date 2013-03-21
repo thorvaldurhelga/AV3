@@ -26,6 +26,7 @@ function cleanedBookPoints = getCleanedBookPoints(bookPoints)
 
 		% plot the results
 		plot3(cleanedBookPoints{i}(:,1),cleanedBookPoints{i}(:,2),cleanedBookPoints{i}(:,3),'r.')
+		%saveas(fig,strcat('../../Images/BookCleaning1/Cleaned/Cleaned',int2str(i)),'png');
 		pause(1);
 
 	end

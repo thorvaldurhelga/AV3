@@ -1,6 +1,9 @@
-% plotBookPoints: function to apply the rotation and translation to the book point clouds and plot the results
+% plotBookPoints: 
 
 function y = plotBookPoints(bookPoints,planes)
+
+	% clean up the bookpoints
+	cleanedBookPoints = getCleanedBookPoints(bookPoints);
 
 	% get the rotation matrices
 	rotationMatrices = findRotationMatrices(planes);
@@ -8,7 +11,7 @@ function y = plotBookPoints(bookPoints,planes)
 	% apply the rotation to each frame
 	rotatedBookPoints = {};
 	for i = 1:21
-		rotatedBookPoint = (rotationMatrices{i}*bookPoints{i}')';
+		rotatedBookPoint = (rotationMatrices{i}*cleanedBookPoints{i}')';
 		rotatedBookPoints{i} = rotatedBookPoint;
 	end
 
@@ -36,5 +39,7 @@ function y = plotBookPoints(bookPoints,planes)
 	clf
 	hold on
 	plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
+
+	y = allBookPoints;
 
 end
