@@ -11,7 +11,7 @@ function pointCloud = preProcessData(frame)
 
 	planePoints = {};       % Points on each individual plane
 	bookPoints = {};        % Points on the book
-	closestPoints = zeros(3); % Closest point in each image, i.e. the corner
+	closestPoints = zeros(3); % Closest point in each image
 
 
 	% Convert the frame into a 3D point cloud
