@@ -15,9 +15,9 @@ for frameNo = 1:length(frame)
         planePoints,closestPoints(frameNo,:));
 end;
 
-% Computing surface normal angle mean and standard deviation
+
 [angle rotationMatrices] = findRotationMatrices(planes);
 angles = [angle(1:16) angle(18:21)];
 angleMean = sum(angles) / length(angles);
 squaredMeanDiff = (angles-mean).^2;
-stdDevAngle = sqrt(sum(squaredMeanDiff)/length(angles));
+stdDevAngle = sqrt(sum(squaredMeanDiff)/length(angles))

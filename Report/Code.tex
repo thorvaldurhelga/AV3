@@ -1,9 +1,43 @@
 \section{Code}
-\subsection{Pre-Processing}
+\subsection{run.m}
+\lstinputlisting[language=Matlab]{../Code/Final/run.m}
+
+
+
 \subsection{Plane Extraction}
-$select\_patches.m$ - Slightly modified version of $select\_patch.m$ where the exhaustive search for points is removed \\
-getallpoints.m - Tolerance variables modified \\
-fitplane.m - Not modified \\
-\subsection{Plane Registration}
+
+\subsubsection{planeExtraction.m}
+\lstinputlisting[language=Matlab]{../Code/Final/planeExtraction.m}
+
+\subsubsection{getClosestPoint.m}
+\lstinputlisting[language=Matlab]{../Code/Final/getClosestPoint.m}
+
+\subsubsection{getClosestPointToPoint.m}
+\lstinputlisting[language=Matlab]{../Code/Final/getClosestPointToPoint.m}
+
+\subsubsection{Other}
+Here we also used the following code from the course:
+\begin{itemize}
+	\item $select\_patches.m$ - Slightly modified version of $select\_patch.m$ where the exhaustive search for points is removed and instead only the three approximated plane patches are used.
+	\item $getallpoints.m$ - Tolerance variables modified.
+	\item $fitplane.m$ - Not modified.
+\end{itemize}
+
+
+
 \subsection{Book Extraction}
-\subsection{Book Registration}
+
+\subsection{bookExtraction.m}
+\lstinputlisting[language=Matlab]{../Code/Final/bookExtraction.m}
+
+\subsection{getPointsAbovePlane.m}
+\lstinputlisting[language=Matlab]{../Code/Final/getPointsAbovePlane.m}
+
+
+
+\subsection{Plane Registration}
+
+
+
+\subsection{Book Fusion}
+%\lstinputlisting[language=Matlab]{../Code/RegionGrowing/doall.m}
