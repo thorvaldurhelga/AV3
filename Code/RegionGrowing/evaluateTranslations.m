@@ -11,10 +11,16 @@ function output = evaluateTranslations(closestPoints,bookPoints)
 		translatedPoints{i} = closestPoints(i,:)-meanBookPoints{i};
 	end
 
+	% go through each of the frames applying the mean book point translation to the closest point
+	scaledPoints = {};
+	for i = 1:21
+		scaledPoints{i} = translatedPoints{i}.*5;
+	end
+
 	% subtract the closest point from the foundation image from the others
-	foundationPoint = translatedPoints{17};
+	foundationPoint = scaledPoints{17};
 	subtractedPoints = [];
-	for i = [1:16 18:21]
+	for i = [1:16 18:21] % skip the foundation image
 		subtractedPoints = [subtractedPoints;translatedPoints{i}-foundationPoint];
 	end
 
