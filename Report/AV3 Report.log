@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  21 MAR 2013 14:27
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  21 MAR 2013 14:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1053,184 +1053,194 @@ Package pdftex.def Info: Images/6-BookPoints-frame2(1).png used on input line 1
 5.
 (pdftex.def)             Requested size: 230.46576pt x 179.04492pt.
 
-<Images/6-RegionGrowingCleaning.png, id=31, 578.16pt x 434.1018pt>
-File: Images/6-RegionGrowingCleaning.png Graphic file (type png)
+<Images/cleaningIteration(1).png, id=31, 986.68625pt x 777.90625pt>
+File: Images/cleaningIteration(1).png Graphic file (type png)
 
-<use Images/6-RegionGrowingCleaning.png>
-Package pdftex.def Info: Images/6-RegionGrowingCleaning.png used on input line 
-36.
-(pdftex.def)             Requested size: 256.07481pt x 192.26392pt.
+<use Images/cleaningIteration(1).png>
+Package pdftex.def Info: Images/cleaningIteration(1).png used on input line 37.
+
+(pdftex.def)             Requested size: 230.46576pt x 181.69221pt.
+
+<Images/6-RegionGrowingCleaning(1).png, id=32, 986.68625pt x 779.91376pt>
+File: Images/6-RegionGrowingCleaning(1).png Graphic file (type png)
+
+<use Images/6-RegionGrowingCleaning(1).png>
+Package pdftex.def Info: Images/6-RegionGrowingCleaning(1).png used on input li
+ne 44.
+(pdftex.def)             Requested size: 230.46576pt x 182.1611pt.
  [4 <./Images/6-BookPoints(1).png> <./Images/6-BookPoints-frame2(1).png>]) (./P
-laneRegistration.tex [5 <./Images/6-RegionGrowingCleaning.png (PNG copy)>]) (./
-BookFusion.tex) (./Evaluation.tex
-<Images/Book1.png, id=40, 578.16pt x 434.1018pt>
+laneRegistration.tex [5 <./Images/cleaningIteration(1).png> <./Images/6-RegionG
+rowingCleaning(1).png>])
+(./BookFusion.tex) (./Evaluation.tex
+<Images/Book1.png, id=43, 578.16pt x 434.1018pt>
 File: Images/Book1.png Graphic file (type png)
  <use Images/Book1.png>
 Package pdftex.def Info: Images/Book1.png used on input line 20.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book2.png, id=41, 578.16pt x 434.1018pt>
+<Images/Book2.png, id=44, 578.16pt x 434.1018pt>
 File: Images/Book2.png Graphic file (type png)
  <use Images/Book2.png>
 Package pdftex.def Info: Images/Book2.png used on input line 26.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book3.png, id=42, 578.16pt x 434.1018pt>
+<Images/Book3.png, id=45, 578.16pt x 434.1018pt>
 File: Images/Book3.png Graphic file (type png)
  <use Images/Book3.png>
 Package pdftex.def Info: Images/Book3.png used on input line 32.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book4.png, id=43, 578.16pt x 434.1018pt>
+<Images/Book4.png, id=46, 578.16pt x 434.1018pt>
 File: Images/Book4.png Graphic file (type png)
  <use Images/Book4.png>
 Package pdftex.def Info: Images/Book4.png used on input line 38.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book5.png, id=44, 578.16pt x 434.1018pt>
+<Images/Book5.png, id=47, 578.16pt x 434.1018pt>
 File: Images/Book5.png Graphic file (type png)
  <use Images/Book5.png>
 Package pdftex.def Info: Images/Book5.png used on input line 44.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book6.png, id=45, 578.16pt x 434.1018pt>
+<Images/Book6.png, id=48, 578.16pt x 434.1018pt>
 File: Images/Book6.png Graphic file (type png)
  <use Images/Book6.png>
 Package pdftex.def Info: Images/Book6.png used on input line 50.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book7.png, id=46, 578.16pt x 434.1018pt>
+<Images/Book7.png, id=49, 578.16pt x 434.1018pt>
 File: Images/Book7.png Graphic file (type png)
  <use Images/Book7.png>
 Package pdftex.def Info: Images/Book7.png used on input line 56.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book8.png, id=47, 578.16pt x 434.1018pt>
+<Images/Book8.png, id=50, 578.16pt x 434.1018pt>
 File: Images/Book8.png Graphic file (type png)
  <use Images/Book8.png>
 Package pdftex.def Info: Images/Book8.png used on input line 62.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book9.png, id=48, 578.16pt x 434.1018pt>
+<Images/Book9.png, id=51, 578.16pt x 434.1018pt>
 File: Images/Book9.png Graphic file (type png)
  <use Images/Book9.png>
 Package pdftex.def Info: Images/Book9.png used on input line 68.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book10.png, id=49, 578.16pt x 434.1018pt>
+<Images/Book10.png, id=52, 578.16pt x 434.1018pt>
 File: Images/Book10.png Graphic file (type png)
  <use Images/Book10.png>
 Package pdftex.def Info: Images/Book10.png used on input line 74.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book11.png, id=50, 578.16pt x 434.1018pt>
+<Images/Book11.png, id=53, 578.16pt x 434.1018pt>
 File: Images/Book11.png Graphic file (type png)
  <use Images/Book11.png>
 Package pdftex.def Info: Images/Book11.png used on input line 80.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book12.png, id=51, 578.16pt x 434.1018pt>
+<Images/Book12.png, id=54, 578.16pt x 434.1018pt>
 File: Images/Book12.png Graphic file (type png)
  <use Images/Book12.png>
 Package pdftex.def Info: Images/Book12.png used on input line 86.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book13.png, id=52, 578.16pt x 434.1018pt>
+<Images/Book13.png, id=55, 578.16pt x 434.1018pt>
 File: Images/Book13.png Graphic file (type png)
  <use Images/Book13.png>
 Package pdftex.def Info: Images/Book13.png used on input line 92.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book14.png, id=53, 578.16pt x 434.1018pt>
+<Images/Book14.png, id=56, 578.16pt x 434.1018pt>
 File: Images/Book14.png Graphic file (type png)
  <use Images/Book14.png>
 Package pdftex.def Info: Images/Book14.png used on input line 98.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book15.png, id=54, 578.16pt x 434.1018pt>
+<Images/Book15.png, id=57, 578.16pt x 434.1018pt>
 File: Images/Book15.png Graphic file (type png)
  <use Images/Book15.png>
 Package pdftex.def Info: Images/Book15.png used on input line 104.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
 
-<Images/Book16.png, id=55, 578.16pt x 434.1018pt>
+[6] [7] <Images/Book16.png, id=65, 578.16pt x 434.1018pt>
 File: Images/Book16.png Graphic file (type png)
- <use Images/Book16.png>
+
+<use Images/Book16.png>
 Package pdftex.def Info: Images/Book16.png used on input line 117.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
-
-<Images/Book17.png, id=56, 578.16pt x 434.1018pt>
+ <Images/Book17.png, id=66, 578.16pt x 434.1018pt>
 File: Images/Book17.png Graphic file (type png)
- <use Images/Book17.png>
+
+<use Images/Book17.png>
 Package pdftex.def Info: Images/Book17.png used on input line 123.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
-
-<Images/Book18.png, id=57, 578.16pt x 434.1018pt>
+ <Images/Book18.png, id=67, 578.16pt x 434.1018pt>
 File: Images/Book18.png Graphic file (type png)
- <use Images/Book18.png>
+
+<use Images/Book18.png>
 Package pdftex.def Info: Images/Book18.png used on input line 129.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
-
-<Images/Book19.png, id=58, 578.16pt x 434.1018pt>
+ <Images/Book19.png, id=68, 578.16pt x 434.1018pt>
 File: Images/Book19.png Graphic file (type png)
- <use Images/Book19.png>
+
+<use Images/Book19.png>
 Package pdftex.def Info: Images/Book19.png used on input line 135.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
-
-<Images/Book20.png, id=59, 578.16pt x 434.1018pt>
+ <Images/Book20.png, id=69, 578.16pt x 434.1018pt>
 File: Images/Book20.png Graphic file (type png)
- <use Images/Book20.png>
+
+<use Images/Book20.png>
 Package pdftex.def Info: Images/Book20.png used on input line 141.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
-
-<Images/Book21.png, id=60, 578.16pt x 434.1018pt>
+ <Images/Book21.png, id=70, 578.16pt x 434.1018pt>
 File: Images/Book21.png Graphic file (type png)
- <use Images/Book21.png>
+
+<use Images/Book21.png>
 Package pdftex.def Info: Images/Book21.png used on input line 147.
 (pdftex.def)             Requested size: 153.64644pt x 115.361pt.
-
-[6] [7 <./Images/Book1.png (PNG copy)> <./Images/Book2.png (PNG copy)> <./Image
-s/Book3.png (PNG copy)> <./Images/Book4.png (PNG copy)> <./Images/Book5.png (PN
-G copy)> <./Images/Book6.png (PNG copy)> <./Images/Book7.png (PNG copy)> <./Ima
-ges/Book8.png (PNG copy)> <./Images/Book9.png (PNG copy)> <./Images/Book10.png 
-(PNG copy)> <./Images/Book11.png (PNG copy)> <./Images/Book12.png (PNG copy)> <
-./Images/Book13.png (PNG copy)> <./Images/Book14.png (PNG copy)> <./Images/Book
-15.png (PNG copy)>]) (./Code.tex
+ [8 <./Images/Book1.png (PNG copy)> <./Images/Book2.png (PNG copy)> <./Images/B
+ook3.png (PNG copy)> <./Images/Book4.png (PNG copy)> <./Images/Book5.png (PNG c
+opy)> <./Images/Book6.png (PNG copy)> <./Images/Book7.png (PNG copy)> <./Images
+/Book8.png (PNG copy)> <./Images/Book9.png (PNG copy)> <./Images/Book10.png (PN
+G copy)> <./Images/Book11.png (PNG copy)> <./Images/Book12.png (PNG copy)> <./I
+mages/Book13.png (PNG copy)> <./Images/Book14.png (PNG copy)> <./Images/Book15.
+png (PNG copy)>]) (./Code.tex
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (../Code/Final/preProcessData.m
-Overfull \hbox (552.39853pt too wide) in paragraph at lines 1--3
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (9.54947pt too wide) in paragraph at lines 1--2
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[8 <./Images/Book16.png (PNG copy)> <./Images/Book17.png (PNG copy)> <./Images/
+
+Overfull \hbox (37.74942pt too wide) in paragraph at lines 2--4
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9 <./Images/Book16.png (PNG copy)> <./Images/Book17.png (PNG copy)> <./Images/
 Book18.png (PNG copy)> <./Images/Book19.png (PNG copy)> <./Images/Book20.png (P
 NG copy)> <./Images/Book21.png (PNG copy)>]
-Overfull \hbox (51.8494pt too wide) in paragraph at lines 13--16
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 32.
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 31.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 31.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 32.
 )
-(../Code/Final/planeExtraction.m [9] [10]) (../Code/Final/getClosestPoint.m)
-(../Code/Final/getClosestPointToPoint.m [11]) (../Code/Final/bookExtraction.m)
+(../Code/Final/planeExtraction.m [10] [11]) (../Code/Final/getClosestPoint.m)
+(../Code/Final/getClosestPointToPoint.m [12]) (../Code/Final/bookExtraction.m)
 Overfull \hbox (30.69943pt too wide) in paragraph at lines 27--30
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-(../Code/Final/getPointsAbovePlane.m)) [12] [13] (./AV3 Report.aux) ) 
+(../Code/Final/getPointsAbovePlane.m) [13]) [14] (./AV3 Report.aux) ) 
 Here is how much of TeX's memory you used:
- 20300 strings out of 493633
- 415108 string characters out of 3143378
- 546038 words of memory out of 3000000
- 23138 multiletter control sequences out of 15000+200000
+ 20308 strings out of 493633
+ 415373 string characters out of 3143378
+ 546193 words of memory out of 3000000
+ 23145 multiletter control sequences out of 15000+200000
  10580 words of font info for 38 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  63i,17n,74p,885b,2144s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1242,10 +1252,10 @@ xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
 ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
 e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "AV3 Report.pdf" (13 pages, 1283157 bytes).
+Output written on "AV3 Report.pdf" (14 pages, 1296183 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 

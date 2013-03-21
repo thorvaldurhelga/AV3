@@ -19,46 +19,49 @@
 \newlabel{fig:bookPointsFrame2}{{3b}{4}}
 \newlabel{sub@fig:bookPointsFrame2}{{b}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Book points for the foundation frame 17 (a) and frame 2 (b) displayed in yellow.\relax }}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Extracted book points for frame 2 after an additional recursive algorithm for region growing has been applied to distinguish true book points from noise. True book points are shown in red.\relax }}{5}}
-\newlabel{fig:bookPointsFrame2Cleaned}{{4}{5}}
+\newlabel{fig:cleaningIteration}{{4a}{5}}
+\newlabel{sub@fig:cleaningIteration}{{a}{5}}
+\newlabel{fig:bookPointsFrame2Cleaned}{{4b}{5}}
+\newlabel{sub@fig:bookPointsFrame2Cleaned}{{b}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Extracted book points for frame 2 after an additional recursive algorithm for region growing has been applied to distinguish true book points from noise. (a) shows the algorithm in action where blue points are region points and yellow are the frontier. (b) shows the true book points in red that were extracted with the algorithm.\relax }}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Plane Registration}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Plane Matching}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Rotation Estimation}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Translation Estimation}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Book Fusion}{6}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Evaluation}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Images of the book after each dataset is merged}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Images of the book points progressively merging the first 15 frames. Image (a) is just frame 1, image (b) is frames 1 and 2, and so on. Image (o) is the result of merging images 1 to 15.\relax }}{7}}
-\newlabel{fig:mergedBooks1}{{5}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Continuation of the images of the book points progressively merging the last 6 frames to the existing point cloud. Image (a) is the result of merging frames 1 to 16, image (b) is frames 1 to 17, and so on. Image (f) is the result of merging all 21 images.\relax }}{8}}
-\newlabel{fig:mergedBooks2}{{6}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The determinant of the covariance matrix for the position of the corner of the cabinet closest to the viewer}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The mean and standard deviation of the angles between the surface normals of all of the upward facing planes}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Code}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}run.m}{8}}
-\newlabel{runCode}{{4.1}{8}}
-\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/preProcessData.m}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Plane Extraction}{9}}
-\newlabel{PlaneExtractionCode}{{4.2}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}planeExtraction.m}{9}}
-\newlabel{planeExtractionCode}{{4.2.1}{9}}
-\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/planeExtraction.m}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}getClosestPoint.m}{11}}
-\newlabel{getClosestPointCode}{{4.2.2}{11}}
-\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/getClosestPoint.m}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}getClosestPointToPoint.m}{11}}
-\newlabel{getClosestPointToPointCode}{{4.2.3}{11}}
-\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/getClosestPointToPoint.m}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Other}{12}}
-\newlabel{OtherCode}{{4.2.4}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Book Extraction}{12}}
-\newlabel{BookExtractionCode}{{4.3}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}bookExtraction.m}{12}}
-\newlabel{bookExtractionCode}{{4.3.1}{12}}
-\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/bookExtraction.m}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}getPointsAbovePlane.m}{12}}
-\newlabel{getPointsAbovePlane}{{4.4}{12}}
-\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/getPointsAbovePlane.m}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Plane Registration}{13}}
-\newlabel{PlaneRegistrationCode}{{4.5}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Book Fusion}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Images of the book after each dataset is merged}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Images of the book points progressively merging the first 15 frames. Image (a) is just frame 1, image (b) is frames 1 and 2, and so on. Image (o) is the result of merging images 1 to 15.\relax }}{8}}
+\newlabel{fig:mergedBooks1}{{5}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Continuation of the images of the book points progressively merging the last 6 frames to the existing point cloud. Image (a) is the result of merging frames 1 to 16, image (b) is frames 1 to 17, and so on. Image (f) is the result of merging all 21 images.\relax }}{9}}
+\newlabel{fig:mergedBooks2}{{6}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The determinant of the covariance matrix for the position of the corner of the cabinet closest to the viewer}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The mean and standard deviation of the angles between the surface normals of all of the upward facing planes}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Code}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}run.m}{9}}
+\newlabel{runCode}{{4.1}{9}}
+\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/preProcessData.m}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Plane Extraction}{10}}
+\newlabel{PlaneExtractionCode}{{4.2}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}planeExtraction.m}{10}}
+\newlabel{planeExtractionCode}{{4.2.1}{10}}
+\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/planeExtraction.m}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}getClosestPoint.m}{12}}
+\newlabel{getClosestPointCode}{{4.2.2}{12}}
+\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/getClosestPoint.m}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}getClosestPointToPoint.m}{12}}
+\newlabel{getClosestPointToPointCode}{{4.2.3}{12}}
+\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/getClosestPointToPoint.m}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Other}{13}}
+\newlabel{OtherCode}{{4.2.4}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Book Extraction}{13}}
+\newlabel{BookExtractionCode}{{4.3}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}bookExtraction.m}{13}}
+\newlabel{bookExtractionCode}{{4.3.1}{13}}
+\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/bookExtraction.m}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}getPointsAbovePlane.m}{13}}
+\newlabel{getPointsAbovePlane}{{4.4}{13}}
+\@writefile{lol}{\contentsline {lstlisting}{../Code/Final/getPointsAbovePlane.m}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Plane Registration}{14}}
+\newlabel{PlaneRegistrationCode}{{4.5}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Book Fusion}{14}}
