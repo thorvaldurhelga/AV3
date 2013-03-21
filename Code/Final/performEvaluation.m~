@@ -1,7 +1,8 @@
 % performEvaluation: function to evaluate the algorithm
 
 % Input:
-% allBookPoints: 
+% transformedBookPoints: the transformed but unscaled book points
+% closestPoints: the closest point in each image 
 
 function output = performEvaluation(transformedBookPoints,closestPoints)
 

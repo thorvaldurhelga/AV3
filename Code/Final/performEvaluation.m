@@ -1,7 +1,15 @@
 % performEvaluation: function to evaluate the algorithm
 
 % Input:
-% allBookPoints: 
+% transformedBookPoints: the transformed but unscaled book points
+% closestPoints: the closest point in each image 
+
+% Output:
+% output: a cell array containing:
+% the covariance matrix of the corner point positions
+% the determinant of the covariance matrix
+% the mean of the surface normal angles
+% the standard deviation of the surface normal angles
 
 function output = performEvaluation(transformedBookPoints,closestPoints)
 
@@ -61,6 +69,10 @@ angles = [angles(1:16) angles(18:21)];
 angleMean = sum(angles) / length(angles);
 squaredMeanDiff = (angles-mean).^2;
 stdDevAngle = sqrt(sum(squaredMeanDiff)/length(angles));
+
+output{3} = angleMean;
+output{4} = stdDevAngle;
+
 
 end
 
