@@ -25,7 +25,7 @@ function rotationMatrices = findRotationMatrices(planes)
 		axis = cross(n1,n2);
 	
 		% the normals are normalised, so the angle in radians is
-		angle = acos(dot(n1,n2))
+		angle = acos(dot(n1,n2));
 	
 		% then we define the rotation matrix using makehgtform
 		R = makehgtform('axisrotate',axis,angle);

@@ -14,7 +14,7 @@ function [angle rotationMatrices] = findRotationMatrices(planes)
 	% get the rotation matrix for each frame
 	rotationMatrices = {};
 	for i = 1:21
-	
+        
 		p1 = planes(3,:,i);
 	
 		% calculate normal vectors n1 and n2 for planes p1 and p2
@@ -28,7 +28,7 @@ function [angle rotationMatrices] = findRotationMatrices(planes)
 		angle(i) = acos(dot(n1,n2))
 	
 		% then we define the rotation matrix using makehgtform
-		R = makehgtform('axisrotate',axis,angle);
+		R = makehgtform('axisrotate',axis,angle(i));
 	
 		% if it's the reference frame we just use the identity matrix for the rotation, otherwise use R
 		if (i==17)
