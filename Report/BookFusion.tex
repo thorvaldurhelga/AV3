@@ -1,1 +1,12 @@
 \subsection{Book Fusion}
+
+The final task was to apply the transformations described above to each image, giving a final 3D point cloud corresponding to the fused book points. To do this we performed the following steps:
+
+\begin{enumerate}
+	\item Apply the correct rotation matrix to each book point cloud by multiplying the transpose of the book point cloud (in which each (x,y,z) point is represented by a column) by the rotation matrix
+	\item Translate each book point cloud by subtracting the co-ordinates of its mean point from the co-ordinates of every point
+	\item Combine the individual point clouds to create the overall image
+\end{enumerate}
+
+
+

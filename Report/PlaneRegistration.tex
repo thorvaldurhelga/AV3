@@ -1,3 +1,39 @@
 \subsection{Plane Registration}
 
-For registering views we decided to use frame number 17 as our foundation frame (see Figure \ref{fig:foundation}) which we used for computing the rotation and translation between that frame and all the others.
+As mentioned earlier in this report, for registering views we decided to use frame number 17 as our foundation frame (see Figure \ref{fig:foundation}). We used this frame for computing the rotation and translation between that frame and all the others.
+
+The plane registration step in the assignment consists of three stages:
+
+\begin{enumerate}
+	\item Match large planes in the different frames to each other to identify which plane in each frame corresponds to each plane in the foundation frame
+	\item Estimate the rotation required to align each frame with the reference frame
+	\item Estimate the translation required to align each frame with the reference frame 
+\end{enumerate}
+
+Here we discuss each of these stages in turn.
+
+\subsubsection{Plane Matching}
+
+Thanks to our approach to selecting the seed points for region growing, the region growing algorithm output the three visible planes of the cabinet in the same order for each frame. As a result plane matching was trivial for us, as we knew that for each frame the first plane was the right side of the cabinet, the second plane was the top, and the third plane was the left side of the cabinet.
+
+\subsubsection{Rotation Estimation}
+
+To estimate the rotation matrices that would bring each frame into the same orientation as the foundation frame, we chose one of the large planes and estimated the angle of rotation based on the surface normal of that plane in each frame and the surface normal of that plane in the foundation frame. We performed the following steps:
+
+\begin{enumerate}
+	\item Calculate the surface normals for the two planes being compared
+	\item Take the cross product of the two surface normals to give a vector that is orthogonal to both, and provides an appropriate axis of rotation
+	\item Calculate the angle of rotation about that axis in radians
+	\item Use this angle to calculate the rotation matrix 
+\end{enumerate}
+
+\subsubsection{Translation Estimation}
+
+The basic idea behind the translation estimation was that if the co-ordinates of a chosen reference point in each point cloud were subtracted from the co-ordinates of every point in the point cloud, this would result in an image centered at the reference point. Given that the reference point is at the same location in every image, doing this to each image should result in each image being aligned.
+
+We experimented with a number of approaches to estimating the appropriate translation between the frames, based on a number of different possible reference points. These included the closest point in the image, the average point from one of the points on the plane, and the average of the rotated book points. While using the closest point would have given us the best fit in the evaluation, it proved to be less effective than using the average of the rotated book points in providing an accurate 3D representation of the book during the book point fusion stage. We therefore decided to use the average of the rotated book points in our final solution.
+
+
+
+
+
