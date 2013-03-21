@@ -1,9 +1,9 @@
 \section{Introduction}
-This assignment involved analyzing 21 consecutive image frames captured with a Kinect sensor. These frames contained both RGP pixel intensity values and XYZ range values. The images showed many different angles of a cabinet containing an open book on top. Our goal was the following:
+This assignment involved analyzing 21 consecutive image frames captured with a Kinect sensor. These frames contained both RGB pixel intensity values and XYZ range values. The images showed many different angles of a cabinet containing an open book on top. Our goal was the following:
 \begin{enumerate}[(i)]
-	\item Extract the three planes that formed the front of the rectangular cabinet and compute their plane equations.
-	\item Extract the set of points belonging to the book.
-	\item Compute the translation and rotation of the three planes between frames to register all views together.
-	\item Fuse all views of the book together using the translation and rotation computed in step (ii).
+	\item Extract the three large visible planes of the filing cabinet and compute their plane equations
+	\item Extract the set of points belonging to the book
+	\item Compute the translation and rotation of the three planes between frames to register all views together
+	\item Fuse all views of the book together using the translation and rotation computed in the previous step
 \end{enumerate}
-At last we evaluated our approach by looking at our 3D fused view of the book, computing the determinant of the covariance matrix between the same point in all frames, and compute the average and standard deviation of surface normal angles which have been corrected in terms of rotation.
+At last we evaluated our approach by creating a 3D fused view of the book, computing the determinant of the covariance matrix between the same point in all frames, and computed the average and standard deviation of surface normal angles which have been corrected in terms of rotation.
