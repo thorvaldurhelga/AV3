@@ -1,0 +1,78 @@
+% performEvaluation: function to evaluate the algorithm
+
+% Input:
+% transformedBookPoints: the transformed but unscaled book points
+% closestPoints: the closest point in each image 
+
+% Output:
+% output: a cell array containing:
+% the covariance matrix of the corner point positions
+% the determinant of the covariance matrix
+% the mean of the surface normal angles
+% the standard deviation of the surface normal angles
+
+function output = performEvaluation(transformedBookPoints,closestPoints)
+
+% 1. plot the book points as the points from each image are added
+
+% apply the scaling to each transformed book point cloud
+scaledBookPoints = {};
+for i = 1:21
+	scaledBookPoints{i} = transformedBookPoints{i}.*5;
+end
+
+% plot the results
+fig = figure(1);
+clf
+hold on
+
+% put all the bookpoints together
+allBookPoints = [];
+for i = 1:21
+	allBookPoints = [allBookPoints;scaledBookPoints{i}];
+	plot3(allBookPoints(:,1),allBookPoints(:,2),allBookPoints(:,3),'k.')
+	saveas(fig, ...
+		strcat('../../Images/FusedBookPoints/3D/Book', ...
+		int2str(i),'.png'));
+end
+
+% 2. compute the determinant of the covariance matrix
+
+% get the mean of all of the book points for each image
+meanBookPoints = getMeanBookPoints(bookPoints);
+
+% go through each of the frames applying the mean book point translation 
+% to the closest point
+translatedPoints = {};
+for i = 1:21
+	translatedPoints{i} = closestPoints(i,:)-meanBookPoints{i};
+end
+
+% subtract the closest point from the foundation image from the others
+foundationPoint = translatedPoints{17};
+subtractedPoints = [];
+for i = [1:16 18:21] % skip the foundation image
+	subtractedPoints = [subtractedPoints;scaledPoints{i}-foundationPoint];
+end
+
+% Compute the evaluation statistics
+covarianceMatrix = cov(subtractedPoints')
+determinantOfCovarianceMatrix = det(covarianceMatrix)
+
+output = {};
+output{1} = covarianceMatrix;
+output{2} = determinantOfCovarianceMatrix;
+
+% 3. compute the mean and standard deviation of the surface normal angles
+[angles rotationMatrices] = findRotationMatrices(planes);
+angles = [angles(1:16) angles(18:21)];
+angleMean = sum(angles) / length(angles);
+squaredMeanDiff = (angles-mean).^2;
+stdDevAngle = sqrt(sum(squaredMeanDiff)/length(angles));
+
+output{3} = angleMean;
+output{4} = stdDevAngle;
+
+
+end
+
